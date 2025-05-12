@@ -1,0 +1,131 @@
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .animate {
+    @apply transform transition duration-300 ease-in-out;
+  }
+}
+
+.text-stroke {
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+.text-stroke-light {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  padding-right: 0 !important;
+}
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  padding-right: 0 !important;
+}
+body {
+  overflow: visible !important;
+}
+
+:root {
+  --main-color: #094067;
+  --second-color: #ef4565;
+  --third-color: #20c997;
+  --fourth-color: #f9d3b7;
+  --darkAndWhite-color: #121212;
+  --main__text-color: #094067;
+  --second__text-color: #5f6c7b;
+  --card-color: #f1f5f9;
+  --gray-color: #bdbdbd;
+  --wood-color: #a77e54;
+  --footer-color: #0e2e45;
+}
+
+.dark {
+  --main-color: #0f8ccf;
+  --second-color: #d32f45;
+  --third--color: #20c997;
+  --darkAndWhite-color: #ffffff;
+  --main__text-color: #a6d9ff;
+  --second__text-color: #93999f;
+}
+
+/* Fonts */
+@font-face {
+  font-family: RadyPro;
+  src: url(../public/Fonts/RadyPro.otf);
+}
+@font-face {
+  font-family: RadyProRegular;
+  src: url(../public/Fonts/RadyProRegular.otf);
+}
+@font-face {
+  font-family: Blabeloo;
+  src: url(../public/Fonts/Blabeloo-font-v.1.0.ttf);
+}
+
+/* Hide arrows for Chrome, Safari, and Edge */
+.no-arrows::-webkit-outer-spin-button,
+.no-arrows::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide arrows for Firefox */
+.no-arrows[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.custom-toast {
+  font-family: "RadyProRegular", sans-serif; /* Change font family */
+  border-radius: 10px; /* Optional: change border radius */
+  direction: rtl; /* Ensure right-to-left direction */
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.rdt_TableHeadRow div {
+  width: 150px;
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow: visible !important;
+}
