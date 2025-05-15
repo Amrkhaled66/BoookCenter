@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import useColors from "src/hooks/useColors";
 import {
   useGetAllCategories,
   useGetAllSellers,
@@ -12,12 +11,14 @@ import Switch from "src/components/ui/Switch";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 import InputFiled2nd from "src/components/ui/InputFiled2nd";
 import ComboboxDropdown from "src/components/ui/ComboboxDropdown";
+
 import { years } from "src/services/yearServices";
 import getItemId from "src/services/getItemId";
+import { COLORS } from "src/services/defaultSettings";
+
 import Alert from "src/components/ui/Alert";
 import { useGetProduct4Admin } from "src/hooks/useAdminMutations";
 export default function Update() {
-  const { colors } = useColors();
   const [selectedCategory, setSelectedCategory] = useState();
   const [selectedProduct, setSelectedProduct] = useState();
   const [isVisible, setIsVisible] = useState(true);
@@ -30,7 +31,6 @@ export default function Update() {
   const { mutate, isPending } = useUpdateProduct();
   const getProduct = useGetProduct4Admin();
 
-  const mainColor = colors.get("mainColor");
 
   const selectedCategoryId = getItemId(categories, selectedCategory);
   const { data: productOptions = [], refetch: refetchProductOptions } =
@@ -326,7 +326,7 @@ export default function Update() {
               <TransparentBtn
                 loading={isPending}
                 type="submit"
-                bgColor={mainColor}
+                bgColor={COLORS["mainColor"]}
                 className="w-full text-white"
               >
                 تحديث

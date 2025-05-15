@@ -1,4 +1,4 @@
-import axiosInstance from "src/utils/axiosInstance";
+import axiosInstance from "src/api/axios";
 
 const checkAndEditCart = async () => {
   const cart = JSON.parse(localStorage.getItem("cart"));

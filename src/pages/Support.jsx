@@ -2,9 +2,7 @@ import PageHeader from "src/components/ui/PageHeader";
 import SupportImg from "src/assets/support.svg?react";
 import LeftSection from "src/components/Support/LeftSection";
 
-import useGoToPageTop from "src/hooks/useGoToPageTop";
 export default function Support() {
-  useGoToPageTop();
   return (
     <div className="flex h-auto min-h-screen w-screen flex-col items-center gap-y-14 bg-card-color pb-[100px] pt-[150px] lg:gap-y-28">
       <PageHeader title="التواصل مع الدعم" />

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { PiBooks } from "react-icons/pi";
 
 import CurlyLine from "src/assets/CurlyLine.svg?react";
 import Quotes from "src/assets/Quotes.svg?react";
@@ -8,7 +7,7 @@ import TransparentBtn from "src/components/ui/TransparentBtn";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 
-import useColors from "src/hooks/useColors";
+import { COLORS } from "src/services/defaultSettings";
 
 import useAuth from "src/hooks/useAuth";
 const ContentSectionTitle = function () {
@@ -24,8 +23,6 @@ const ContentSectionTitle = function () {
 
 export default function ContentSection() {
   const { isAuth } = useAuth();
-  const { colors } = useColors();
-  const secondColor = colors.get("secondColor");
 
   return (
     <motion.div
@@ -41,7 +38,7 @@ export default function ContentSection() {
       <p className="flex flex-col space-y-1 text-center text-base font-[550]  tracking-wide text-second-text--color md:text-right sm:text-lg leading-[30px] lg:text-2xl">
         بتدور علي كتب دراسية أو رواية تخطف أنفاسك  <br />عندنا كل اللي محتاجه في مكان
         واحد
-        
+
       </p>
 
       {/* CTA button */}
@@ -49,7 +46,7 @@ export default function ContentSection() {
         <Link to="/signup">
           <TransparentBtn
             className={"flex items-center gap-x-2 text-white"}
-            bgColor={secondColor}
+            bgColor={COLORS["secondColor"]}
           >
             <span className="text-xl"> متيلا نعمل اكونت ؟ </span>
             <Icon icon="streamline-emojis:panda-face" width="24" height="24" />
@@ -60,7 +57,7 @@ export default function ContentSection() {
         <Link to="/products">
           <TransparentBtn
             className={"flex items-center gap-x-2 text-white"}
-            bgColor={secondColor}
+            bgColor={COLORS["secondColor"]}
           >
             <span className="text-xl"> تصفح كل الكتب</span>
             <Icon icon="streamline-emojis:panda-face" width="24" height="24" />

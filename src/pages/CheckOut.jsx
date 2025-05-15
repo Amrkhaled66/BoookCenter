@@ -5,7 +5,6 @@ import OrderSummary from "src/components/CheckOut/OrderSummary";
 import { useState, useCallback } from "react";
 import { useCreateInvoice } from "src/hooks/useInvoiceMutations";
 import useCart from "src/hooks/useCart";
-import useGoToPageTop from "src/hooks/useGoToPageTop";
 import { useNavigate } from "react-router-dom";
 
 import validateCheckoutForm from "src/utils/validateCheckoutForm";
@@ -15,7 +14,6 @@ import Alert from "src/components/ui/Alert";
 import { useValidateCart } from "src/hooks/useCart";
 
 const CheckOut = () => {
-  useGoToPageTop();
   useValidateCart();
 
   const { cart, cartLength } = useCart();

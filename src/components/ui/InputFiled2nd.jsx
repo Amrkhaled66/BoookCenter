@@ -34,6 +34,7 @@ export default function InputFiled2nd({
     <div>
       <div className="group relative mx-auto w-full">
         <input
+          
           type={type}
           id="input"
           className="peer w-full border-b-2 border-gray-300 bg-transparent px-0 py-1 text-lg outline-none focus:border-gray-600"

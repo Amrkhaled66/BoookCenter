@@ -7,6 +7,7 @@ import { GiMaterialsScience } from "react-icons/gi";
 import { GiTeacher } from "react-icons/gi";
 import { FaBoxOpen } from "react-icons/fa";
 import { RiStockLine } from "react-icons/ri";
+import { BsBoxes } from "react-icons/bs";
 
 export const links = [
   {
@@ -49,4 +50,9 @@ export const links = [
     icon: <RiStockLine />,
     to: "productsQuantity",
   },
+  {
+    name:"جدول المنتجات",
+    icon: <BsBoxes />,
+    to:"productsTable"
+  }
 ];

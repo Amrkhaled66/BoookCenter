@@ -8,16 +8,15 @@ import TransparentBtn from "src/components/ui/TransparentBtn";
 import CurvedLine from "src/assets/CurvedLine.svg?react";
 import Loader from "src/components/ui/icons/Loader";
 
-import useColors from "src/hooks/useColors";
 import useCategory from "src/hooks/useCategory";
 import { useLocation } from "react-router-dom";
 import { useProducts } from "src/contexts/products";
+import { COLORS } from "src/services/defaultSettings";
+
 
 export default function MainSection() {
-  const { colors } = useColors();
   const { selectedCategory, departmentsLoading } = useCategory();
   const location = useLocation().pathname;
-  const secondColor = colors.get("secondColor");
   useProducts();
 
   return (
@@ -38,7 +37,7 @@ export default function MainSection() {
             <Link to="/products">
               <TransparentBtn
                 className={"flex items-center gap-x-2 text-white"}
-                bgColor={secondColor}
+                bgColor={COLORS["secondColor"]}
               >
                 <span className="text-xl"> تصفح كل الكتب</span>
                 <Icon

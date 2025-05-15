@@ -2,7 +2,6 @@ import AppRouter from "src/routes/AppRouter";
 
 import IsNavStickyContextProvider from "./contexts/isNavSticky";
 import ShowMobileMenuContextProvider from "./contexts/ShowMobileMenu"
-import ColorsContextProvider from "./contexts/colors";
 import CartContextProvider from "./contexts/cart";
 import CategoryContextProvider from "./contexts/category";
 import WidthContextProvider from "./contexts/widthContext";
@@ -37,11 +36,9 @@ function App() {
                 <ProductsContextProvider>
                   <IsNavStickyContextProvider>
                     <ShowMobileMenuContextProvider>
-                      <ColorsContextProvider>
-                        <AdminContextProvider>
-                          <AppRouter />
-                        </AdminContextProvider>
-                      </ColorsContextProvider>
+                      <AdminContextProvider>
+                        <AppRouter />
+                      </AdminContextProvider>
                     </ShowMobileMenuContextProvider>
                   </IsNavStickyContextProvider>
                 </ProductsContextProvider>

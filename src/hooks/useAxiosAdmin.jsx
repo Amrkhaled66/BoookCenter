@@ -3,11 +3,12 @@ import { refreshToken } from "src/services/api/auth";
 import Alert from "src/components/ui/Alert";
 import { useNavigate } from "react-router-dom";
 import { getAdminToken } from "src/services/authServices";
-import { axiosPrivate } from "src/utils/axiosInstance";
 import useAdminContext from "./useAdminContext";
 
 import { useAdminLogout } from "./useAuthMutations";
 import { ADMIN_PATH } from "src/services/defaultSettings";
+
+import { axiosAdmin } from "src/api/axios";
 function EndedSessionModal() {
   return Alert(
     "انتهت جلسة تسجيل الدخول",
@@ -32,7 +33,7 @@ export default function useAxiosAdmin() {
   };
 
   useEffect(() => {
-    const requestIntercept = axiosPrivate.interceptors.request.use(
+    const requestIntercept = axiosAdmin.interceptors.request.use(
       (config) => {
         if (!config.headers["Authorization"]) {
           config.headers["Authorization"] = `Bearer ${getAdminToken()}`;
@@ -42,7 +43,7 @@ export default function useAxiosAdmin() {
       (error) => Promise.reject(error),
     );
 
-    const responseIntercept = axiosPrivate.interceptors.response.use(
+    const responseIntercept = axiosAdmin.interceptors.response.use(
       (response) => response,
       async (error) => {
         const prevRequest = error?.config;
@@ -54,7 +55,7 @@ export default function useAxiosAdmin() {
             adminLogin(data);
             prevRequest.headers["Authorization"] =
               `Bearer ${data?.accessToken}`;
-            return axiosPrivate(prevRequest);
+            return axiosAdmin(prevRequest);
           } catch (err) {
             handleSessionEnd();
             return Promise.reject(err);
@@ -65,10 +66,9 @@ export default function useAxiosAdmin() {
     );
 
     return () => {
-      axiosPrivate.interceptors.request.eject(requestIntercept);
-      axiosPrivate.interceptors.response.eject(responseIntercept);
+      axiosAdmin.interceptors.request.eject(requestIntercept);
+      axiosAdmin.interceptors.response.eject(responseIntercept);
     };
-  }, [handleSessionEnd]); // ✅ Only re-run when session handling logic changes
+  }, []);
 
-  return axiosPrivate;
 }

@@ -1,4 +1,4 @@
-import axiosInstance from "src/utils/axiosInstance";
+import axiosInstance from "src/api/axios";
 
 const getAllUserProducts = async (location) => {
   const limit = location === "/" ? 4 : null;

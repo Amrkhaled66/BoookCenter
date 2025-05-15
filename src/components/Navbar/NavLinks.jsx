@@ -2,9 +2,6 @@
 import ShadowButton from "components/ui/ShadowButton";
 import ScaleButton from "components/ui/ScaleButton";
 
-// Hooks
-import useColors from "src/hooks/useColors";
-
 //  Icons
 import { Icon } from "@iconify/react";
 
@@ -12,10 +9,9 @@ import Book from "src/assets/Frame.svg?react";
 
 import { Link } from "react-router-dom";
 
-export default function NavLinks() {
-  const { colors } = useColors();
+import { COLORS } from "src/services/defaultSettings";
 
-  const secondColor = colors.get("secondColor");
+export default function NavLinks() {
 
   return (
     <nav className="order-3 hidden items-center justify-center gap-x-5 font-mainFont md:order-none md:block">
@@ -25,7 +21,7 @@ export default function NavLinks() {
           <li>
             <ScaleButton
               className="group peer border-second-color"
-              bgColor={secondColor}
+              bgColor={COLORS["secondColor"]}
               textColor="white"
             >
               <Icon icon="cuida:user-add-outline" width="24" height="24" />

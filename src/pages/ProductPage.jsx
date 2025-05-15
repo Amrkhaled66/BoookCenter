@@ -10,7 +10,6 @@ import ErrorContainer from "src/components/ui/ErrorContainer";
 import { useParams } from "react-router-dom";
 import { useGetProductById } from "src/services/productsServices";
 
-import useGoToPageTop from "src/hooks/useGoToPageTop";
 import Loader from "src/components/ui/icons/Loader";
 
 const BackgroundWave = function () {
@@ -20,7 +19,6 @@ const BackgroundWave = function () {
 };
 
 export default function ProductPage() {
-  useGoToPageTop();
 
   const { id } = useParams();
   const { data: product, isLoading, isError } = useGetProductById(id);

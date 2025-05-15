@@ -3,10 +3,8 @@ import {
   getUserOrders as getUserOrdersRequest,
   updateProfile as updateProfileRequest,
 } from "src/services/api/user";
-import useAxiosPrivate from "./useAxiosPrivate";
 
 const useGetOrders = () => {
-  const axiosPrivate = useAxiosPrivate();
   return useQuery({
     queryKey: ["orders"],
     queryFn: () => getUserOrdersRequest(axiosPrivate),
@@ -14,9 +12,8 @@ const useGetOrders = () => {
 };
 
 const useUpdateProfile = () => {
-  const axiosPrivate = useAxiosPrivate();
   return useMutation({
-    mutationFn: (data) => updateProfileRequest({ axiosPrivate, data}),
+    mutationFn: (data) => updateProfileRequest({  data}),
   });
 };
 

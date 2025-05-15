@@ -1,5 +1,4 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import useAxiosAdmin from "./useAxiosAdmin";
 
 import {
   getUserProfile as getUserProfileRequest,
@@ -28,14 +27,14 @@ import {
   releaseReservedStock,
   getProduct4AdminRequest,
   getProductByNAme,
-  addManualOrder
+  addManualOrder,
+  getProduct4Admin
 } from "src/services/api/admin";
 
 const useGetUserProfile = (id) => {
-  const axiosAdmin = useAxiosAdmin();
   return useQuery({
     queryKey: [`user ${id}`],
-    queryFn: () => getUserProfileRequest({ axiosAdmin, id }),
+    queryFn: () => getUserProfileRequest({ id }),
   });
 };
 
@@ -46,30 +45,26 @@ const useGetUserId = () => {
 };
 
 const useGetUserByPhone = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (phone) => getUserByPhone({ axiosAdmin, phone }),
+    mutationFn: (phone) => getUserByPhone({ phone }),
   });
-}
+};
 
 const useGetProductByName4Admin = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (name) => getProductByNAme({ axiosAdmin, name }),
+    mutationFn: (name) => getProductByNAme({ name }),
   });
 };
 
 const useUpdatePassword = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (data) => updatePasswordRequest({ axiosAdmin, data }),
+    mutationFn: (data) => updatePasswordRequest({ data }),
   });
 };
 
 const useAddNewCategory = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (sentData) => addNewCategoryRequest({ axiosAdmin, sentData }),
+    mutationFn: (sentData) => addNewCategoryRequest({ sentData }),
   });
 };
 
@@ -83,24 +78,20 @@ const useGetAllCategories = () => {
 };
 
 const useUpdateCategory = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: ({ id, sentData }) =>
-      updateCategory({ axiosAdmin, sentData, id }),
+    mutationFn: ({ id, sentData }) => updateCategory({ sentData, id }),
   });
 };
 
 const useDeleteCategory = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (id) => deleteCategory({ axiosAdmin, id }),
+    mutationFn: (id) => deleteCategory({ id }),
   });
 };
 
 const useAddNewSubject = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (sentData) => addNewSubject({ axiosAdmin, sentData }),
+    mutationFn: (sentData) => addNewSubject({ sentData }),
   });
 };
 
@@ -114,24 +105,20 @@ const useGetAllSubjects = () => {
 };
 
 const useUpdateSubject = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: ({ id, sentData }) =>
-      updateSubject({ axiosAdmin, sentData, id }),
+    mutationFn: ({ id, sentData }) => updateSubject({ sentData, id }),
   });
 };
 
 const useDeleteSubject = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (id) => deleteSubject({ axiosAdmin, id }),
+    mutationFn: (id) => deleteSubject({ id }),
   });
 };
 
 const useAddNewSeller = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (sentData) => addNewSeller({ axiosAdmin, sentData }),
+    mutationFn: (sentData) => addNewSeller({ sentData }),
   });
 };
 
@@ -145,39 +132,32 @@ const useGetAllSellers = (category) => {
 };
 
 const useUpdateSeller = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: ({ id, sentData }) =>
-      updateSeller({ axiosAdmin, sentData, id }),
+    mutationFn: ({ id, sentData }) => updateSeller({ sentData, id }),
   });
 };
 
 const useDeleteSeller = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (id) => deleteSeller({ axiosAdmin, id }),
+    mutationFn: (id) => deleteSeller({ id }),
   });
 };
 
 const useAddNewProduct = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (sentData) => addProduct({ axiosAdmin, sentData }),
+    mutationFn: (sentData) => addProduct({ sentData }),
   });
 };
 
 const useUpdateProduct = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: ({ id, sentData }) =>
-      updateProduct({ axiosAdmin, sentData, id }),
+    mutationFn: ({ id, sentData }) => updateProduct({ sentData, id }),
   });
 };
 
 const useDeleteProduct = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (id) => deleteProduct({ axiosAdmin, id }),
+    mutationFn: (id) => deleteProduct({ id }),
   });
 };
 
@@ -189,46 +169,46 @@ const useGetProductOptions = (category) => {
 };
 
 const useGetStockRecord = () => {
-  const axiosAdmin = useAxiosAdmin();
-
   return useMutation({
-    mutationFn: (id) => getStockRecord({ axiosAdmin, id }),
+    mutationFn: (id) => getStockRecord({ id }),
   });
 };
 
 const useUpdateStock = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (sentData) => updateStock({ axiosAdmin, sentData }),
+    mutationFn: (sentData) => updateStock({ sentData }),
   });
 };
 
 const useGetExpiredOrders = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useQuery({
     queryKey: ["expiredOrders"],
-    queryFn: () => getExpiredOrders({ axiosAdmin }),
+    queryFn: () => getExpiredOrders(),
   });
 };
 
 const useReleaseReservedStock = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: () => releaseReservedStock({ axiosAdmin }),
+    mutationFn: () => releaseReservedStock(),
   });
 };
 
 const useGetProduct4Admin = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (id) => getProduct4AdminRequest({ axiosAdmin, id }),
+    mutationFn: (id) => getProduct4AdminRequest({ id }),
+  });
+};
+
+const useGetProducts4Admin = () => {
+  return useQuery({
+    queryKey: ["products4admin"],
+    queryFn: (options) => getProduct4Admin(options),
   });
 };
 
 const useAddManualOrder = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (sentData) => addManualOrder({ axiosAdmin, sentData }),
+    mutationFn: (sentData) => addManualOrder({ sentData }),
   });
 };
 
@@ -259,5 +239,6 @@ export {
   useGetProduct4Admin,
   useGetUserByPhone,
   useGetProductByName4Admin,
-  useAddManualOrder
+  useAddManualOrder,
+  useGetProducts4Admin
 };

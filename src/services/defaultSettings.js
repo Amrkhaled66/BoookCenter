@@ -19,4 +19,12 @@ const paidStatus = {
 };
 const NEXT_ITEM_FEES = 7;
 
-export { ADMIN_PATH, paidStatus, NEXT_ITEM_FEES };
+const COLORS = {
+  mainColor: "#094067",
+  secondColor: "#ef4565",
+  thirdColor: "#20C997",
+  fourthColor:"#f9d3b7",
+  mainTextColor: "#094067",
+};
+
+export { ADMIN_PATH, paidStatus, NEXT_ITEM_FEES, COLORS };

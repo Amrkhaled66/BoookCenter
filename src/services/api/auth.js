@@ -1,4 +1,4 @@
-import axiosInstance from "src/utils/axiosInstance";
+import axiosInstance,{ axiosAdmin} from "src/api/axios";
 const login = async (phone, pass) => {
   try {
     const { data } = await axiosInstance.post(
@@ -69,7 +69,7 @@ const adminLogin = async (email, pass) => {
   }
 };
 
-const loginAsUser = async (axiosAdmin, phone) => {
+const loginAsUser = async (phone) => {
   try {
     const { data } = await axiosAdmin.post("/admin/loginAsUser", phone);
     return data;

@@ -6,7 +6,6 @@ import { useMutation } from "@tanstack/react-query";
 
 import { addToCartValidation as AddToCartRequest } from "src/services/api/cart";
 
-import useAxiosPrivate from "./useAxiosPrivate";
 
 import Alert from "src/components/ui/Alert";
 
@@ -18,11 +17,10 @@ export default function useCart() {
 }
 
 function useAddToCartValidation() {
-  const axiosPrivate = useAxiosPrivate();
 
   return useMutation({
     mutationFn: ({ id, quantity }) =>
-      AddToCartRequest({ axiosPrivate, id, quantity }),
+      AddToCartRequest({  id, quantity }),
     onSuccess: (data) => {
       const { id, quantity, price } = data.product;
     },

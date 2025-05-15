@@ -24,3 +24,4 @@ export { default as AdminLogInPage } from "./DashBoard/AdminLogInPage";
 export { default as Category } from "./DashBoard/Category";
 export { default as Seller } from "./DashBoard/Seller";
 export { default as ProductsQuantity } from "./DashBoard/ProductsQuantity";
+export { default as ProductsTable } from "./DashBoard/Products";

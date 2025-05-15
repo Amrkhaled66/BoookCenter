@@ -23,6 +23,7 @@ const validate = (phone) => {
     errors,
   };
 };
+
 const LoginAsUser = () => {
   const { errors, handleValidation, handleError } = useFormValidation(validate);
   const { login } = useAuth();

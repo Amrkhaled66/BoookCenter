@@ -1,12 +1,7 @@
 import DataTable from "react-data-table-component";
 
-import useColors from "src/hooks/useColors";
-
+import { COLORS } from "src/services/defaultSettings";
 export default function Table({ ...props }) {
-  const { colors } = useColors();
-
-  const mainColor = colors.get("mainColor");
-
   return (
     <DataTable
       {...props}
@@ -40,7 +35,7 @@ export default function Table({ ...props }) {
               backgroundColor: "#d1d5db",
             },
             "&:hover": {
-              backgroundColor: mainColor,
+              backgroundColor: COLORS["mainColor"],
               color: "#fff",
             },
           },
@@ -49,17 +44,16 @@ export default function Table({ ...props }) {
         cells: {
           style: {
             padding: "15px",
-
             fontSize: "13px",
             height: "fit-content",
             textAlign: "center",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            whiteSpace: "normal", // Allows text to wrap
-            wordBreak: "break-word", // Ensures long words break properly
-            overflow: "visible", // Ensures content is shown
-            textOverflow: "clip", // Prevents "..."
+            whiteSpace: "normal", 
+            wordBreak: "break-word",
+            overflow: "visible",
+            textOverflow: "clip",
           },
         },
       }}

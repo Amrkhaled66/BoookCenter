@@ -2,16 +2,13 @@ import {
   useGetExpiredOrders,
   useReleaseReservedStock,
 } from "src/hooks/useAdminMutations";
-import useColors from "src/hooks/useColors";
 
 import Alert from "src/components/ui/Alert";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 export default function ReleaseReservedStock() {
   const { data, isLoading } = useGetExpiredOrders();
-  const { colors } = useColors();
   const { mutate, isLoading: submitLoading } = useReleaseReservedStock();
 
-  const mainColor = colors.get("mainColor");
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -35,7 +32,7 @@ export default function ReleaseReservedStock() {
       <TransparentBtn
         onClick={handleSubmit}
         className={"flex w-full items-center text-white"}
-        bgColor={mainColor}
+        bgColor={COLORS["mainColor"]}
         loading={submitLoading}
       >
         نقل المنتجات اٍلي المخزن

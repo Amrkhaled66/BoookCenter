@@ -1,10 +1,7 @@
 import TransparentBtn from "src/components/ui/TransparentBtn";
-import useColors from "src/hooks/useColors";
-
+import { COLORS } from "src/services/defaultSettings";
 const CoponBtn = () => {
-  const { colors } = useColors();
 
-  const mainColor = colors.get("mainColor");
   return (
     <form className="flex w-full" action="">
       <input
@@ -16,7 +13,6 @@ const CoponBtn = () => {
         onClick={(e) => {
           e.preventDefault();
         }}
-        bgColor={mainColor}
         type="submit"
         className="mx-auto w-[20%] text-sm  font-semibold text-white"
       >
@@ -27,16 +23,13 @@ const CoponBtn = () => {
 };
 
 export default function InvoiceCta({ onSubmit, Loading }) {
-  const { colors } = useColors();
-
-  const secondColor = colors.get("secondColor");
 
   return (
     <div className="mx-auto flex w-[85%] flex-col gap-y-8 md:w-[50%] lg:w-[40%]">
       {/* <CoponBtn /> */}
       <TransparentBtn
         onClick={onSubmit}
-        bgColor={secondColor}
+        bgColor={COLORS["secondColor"]}
         className="mx-auto w-full rounded-lg  font-semibold text-white"
         loading={Loading}
       >

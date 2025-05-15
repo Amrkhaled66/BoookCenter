@@ -2,7 +2,6 @@ import InputFiled2nd from "src/components/ui/InputFiled2nd";
 import ComboboxDropdown from "src/components/ui/ComboboxDropdown";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 
-import useColors from "src/hooks/useColors";
 import { useUpdateStock } from "src/hooks/useAdminMutations";
 import { useEffect, useState } from "react";
 import { useGetProductOptions } from "src/hooks/useAdminMutations";
@@ -12,10 +11,9 @@ import Alert from "src/components/ui/Alert";
 
 import getItemId from "src/services/getItemId";
 
-export default function AddToStock() {
-  const { colors } = useColors();
-  const mainColor = colors.get("mainColor");
+import { COLORS } from "src/services/defaultSettings";
 
+export default function AddToStock() {
   const { mutate, isPending } = useUpdateStock();
   const [chosenProduct, setChosenProduct] = useState(null);
   const { data, isLoading } = useGetProductOptions();
@@ -103,7 +101,7 @@ export default function AddToStock() {
           <TransparentBtn
             type="submit"
             className="w-full text-white"
-            bgColor={mainColor}
+            bgColor={COLORS["mainColor"]}
             loading={isPending}
           >
             أضافة
@@ -124,5 +122,5 @@ const Row = ({ title, num }) => {
     </p>
   );
 
- 
+
 };

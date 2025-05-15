@@ -1,16 +1,21 @@
-const getProfileInfo = async (axiosPrivate) => {
+import { axiosPrivate } from "src/api/axios";
+
+const getProfileInfo = async () => {
   const { data } = await axiosPrivate.get("/user/profile");
   return data;
 };
 
-const getUserOrders = async (axiosPrivate) => {
+const getUserOrders = async () => {
   const data = await axiosPrivate.get("/user/orders");
   data;
   return data;
 };
 
-const updateProfile = async ({ axiosPrivate, data }) => {
-  const { data: response } = await axiosPrivate.patch("/user/updateProfile", data);
+const updateProfile = async ({ data }) => {
+  const { data: response } = await axiosPrivate.patch(
+    "/user/updateProfile",
+    data,
+  );
   return response;
 };
 

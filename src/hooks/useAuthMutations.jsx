@@ -94,9 +94,8 @@ const useAdminLogout = () => {
 };
 
 const useLoginAsUser = () => {
-  const axiosAdmin = useAxiosAdmin();
   return useMutation({
-    mutationFn: (phone) => loginAsUser(axiosAdmin,phone),
+    mutationFn: (phone) => loginAsUser(phone),
   });
 };
 

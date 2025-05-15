@@ -5,7 +5,6 @@ import UserOrderTable from "src/components/DashBoard/UserProfile/UserOrderTable"
 import AdminContainer from "src/components/ui/AdminContainer";
 import Loader from "src/components/ui/icons/Loader";
 
-import useColors from "src/hooks/useColors";
 import useFormValidation from "src/hooks/useFormValidation";
 import { useParams } from "react-router-dom";
 import {
@@ -51,13 +50,11 @@ const Header = ({ title }) => {
 
 const UserProfile = () => {
   const { id } = useParams();
-  const { colors } = useColors();
   const navigate = useNavigate();
   const { errors, handleValidation, handleError } = useFormValidation(validate);
   const { data, isLoading, isError } = useGetUserProfile(id);
   const { mutate, isPending } = useUpdatePassword();
 
-  const mainColor = colors.get("mainColor");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -125,7 +122,7 @@ const UserProfile = () => {
               />
               <TransparentBtn
                 type="submit"
-                bgColor={mainColor}
+                bgColor={COLORS["mainColor"]}
                 className="text-white"
               >
                 تغيير كلمة السر

@@ -1,6 +1,7 @@
 import InputFiled2nd from "./InputFiled2nd";
 import TransparentBtn from "./TransparentBtn";
-import useColors from "src/hooks/useColors";
+
+import { COLORS } from "src/services/defaultSettings";
 
 export default function AdminForm({
   error,
@@ -14,9 +15,6 @@ export default function AdminForm({
   defaultInputValue,
   type = "text",
 }) {
-  const { colors } = useColors();
-  const mainColor = colors.get("mainColor");
-  const secondColor = colors.get("secondColor");
   return (
     <div className="w-full">
       <form
@@ -37,7 +35,7 @@ export default function AdminForm({
 
         <TransparentBtn
           type="submit"
-          bgColor={SubmitText === "حذف" ? secondColor : mainColor}
+          bgColor={SubmitText === "حذف" ? COLORS["secondColor"] : COLORS["mainColor"]}
           className="text-white"
           loading={isLoading}
         >

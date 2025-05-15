@@ -1,5 +1,4 @@
 import { useState, useMemo, useCallback } from "react";
-import useColors from "src/hooks/useColors";
 import {
   useGetAllCategories,
   useGetAllSellers,
@@ -11,11 +10,14 @@ import Switch from "src/components/ui/Switch";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 import InputFiled2nd from "src/components/ui/InputFiled2nd";
 import ComboboxDropdown from "src/components/ui/ComboboxDropdown";
+
 import { years } from "src/services/yearServices";
+import { COLORS } from "src/services/defaultSettings";
+
 import Alert from "src/components/ui/Alert";
 import getItemId from "src/services/getItemId";
+
 export default function Add() {
-  const { colors } = useColors();
   const [isVisible, setIsVisible] = useState(true);
   const [isUnAvailable, setIsUnAvailable] = useState(false);
   const { data: categories, isLoading: categoriesLoading } =
@@ -24,7 +26,6 @@ export default function Add() {
   const { data: subjects, isLoading: subjectsLoading } = useGetAllSubjects();
   const { mutate, isPending } = useAddNewProduct();
 
-  const mainColor = colors.get("mainColor");
 
   const handleSubmit = useCallback(
     (e) => {
@@ -130,7 +131,7 @@ export default function Add() {
         name="year"
         defaultValue="السنة الدراسية"
       />
-     <InputFiled2nd
+      <InputFiled2nd
         type="number"
         required
         name="sellerPrice"
@@ -176,7 +177,7 @@ export default function Add() {
       <TransparentBtn
         loading={isPending}
         type="submit"
-        bgColor={mainColor}
+        bgColor={COLORS["mainColor"]}
         className="w-full text-white"
       >
         أضافة

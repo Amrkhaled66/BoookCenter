@@ -1,11 +1,11 @@
 import Header from "../Header";
 import DeliveryInfoForm from "./DeliveryInfoForm";
 
-import useColors from "src/hooks/useColors";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 import Alert from "src/components/ui/Alert";
 
 import DeliveryCar from "src/assets/DeliveryCar.png";
+import { COLORS } from "src/services/defaultSettings";
 
 const deliveryIssuesList = [
   "لازم الرقم الاساسي يكون متاح ديمأ لان المندوب هيتواصل عليه",
@@ -16,9 +16,7 @@ const deliveryIssuesList = [
 ];
 
 export default function DeliveryInfo({ errors, formData, setFormData }) {
-  const { colors } = useColors();
-  const mainColor = colors.get("mainColor");
-
+ 
   const list = deliveryIssuesList
     .map((issue) => {
       return ` <li class="border-b border-gray-400/50 pr-4   py-2" style="font-family:cairo; font-size:14px ;width:100% ;text-align:right;" >${issue}</li>`;
@@ -34,7 +32,7 @@ export default function DeliveryInfo({ errors, formData, setFormData }) {
         setFormData={setFormData}
       />
       <TransparentBtn
-        bgColor={mainColor}
+        bgColor={COLORS["mainColor"]}
         className="mx-auto w-full text-white"
         onClick={() =>
           Alert(
