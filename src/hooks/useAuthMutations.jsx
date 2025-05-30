@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
-import useAxiosAdmin from "./useAxiosAdmin";
 
 import {
   login as loginRequest,

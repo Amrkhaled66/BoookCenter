@@ -28,7 +28,7 @@ import {
   getProduct4AdminRequest,
   getProductByNAme,
   addManualOrder,
-  getProduct4Admin
+  getProduct4Admin,
 } from "src/services/api/admin";
 
 const useGetUserProfile = (id) => {
@@ -199,10 +199,10 @@ const useGetProduct4Admin = () => {
   });
 };
 
-const useGetProducts4Admin = () => {
+const useGetProducts4Admin = (options) => {
   return useQuery({
-    queryKey: ["products4admin"],
-    queryFn: (options) => getProduct4Admin(options),
+    queryKey: ["products4admin", JSON.stringify(options)],
+    queryFn: () => getProduct4Admin(options),
   });
 };
 
@@ -240,5 +240,5 @@ export {
   useGetUserByPhone,
   useGetProductByName4Admin,
   useAddManualOrder,
-  useGetProducts4Admin
+  useGetProducts4Admin,
 };

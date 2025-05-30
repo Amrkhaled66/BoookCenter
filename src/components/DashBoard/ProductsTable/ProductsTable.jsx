@@ -108,11 +108,12 @@ const columns = [
   },
 ];
 
-export default function ProductsTable() {
-  const { data: products, isLoading } = useGetProducts4Admin();
+export default function ProductsTable({ options }) {
+  const { data: products, isLoading } = useGetProducts4Admin(options);
   if (isLoading) return;
   return (
     <Table pagination paginationPerPage={10} columns={columns} data={products.products} />
+
   );
 }
 

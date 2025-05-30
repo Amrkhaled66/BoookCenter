@@ -4,9 +4,7 @@ import NavBar from "src/components/DashBoard/layout/NavBar/NavBar";
 import TopSection from "src/components/DashBoard/layout/Container/TopSection";
 import BottomSection from "src/components/DashBoard/layout/Container/BottomSection";
 
-import useAxiosAdmin from "src/hooks/useAxiosAdmin";
 export default function DashBoardLayout() {
-  useAxiosAdmin();
   return (
     <div className="relative flex h-auto min-h-screen w-screen">
       <SideBar />

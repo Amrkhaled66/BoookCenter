@@ -8,9 +8,7 @@ import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import useScrollToTop from "src/hooks/ui/useScrollToTop";
 
-import useAxiosSetup from "src/hooks/useAxiosPrivate";
 export default function MainLayout() {
-  useAxiosSetup()
   useScrollToTop()
   const { pathname } = useLocation();
   return (

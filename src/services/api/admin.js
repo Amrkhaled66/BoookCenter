@@ -23,7 +23,9 @@ const getProductByNAme = async ({ name }) => {
 };
 
 const getProduct4Admin = async (options) => {
-  const { data } = await axiosAdmin.get(`/products/admin/get`, options);
+  const { data } = await axiosAdmin.get(`/products/admin/get`, {
+    params: options,
+  });
   return data;
 };
 

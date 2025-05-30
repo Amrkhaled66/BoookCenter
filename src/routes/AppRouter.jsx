@@ -1,5 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
+import { AxiosAdminProvider } from "src/contexts/AxiosAdmin";
+import { AxiosPrivateProvider } from "src/contexts/AxiosPrivate";
+import ProductsContextProvider from "src/contexts/products";
+import CategoryContextProvider from "src/contexts/category";
+import AdminContextProvider from "src/contexts/AdminContext";
+
+
+import DashBoardLayout from "src/layout/DashBoardLayout";
 import MainLayout from "src/layout/MainLayout";
 
 import {
@@ -35,16 +43,32 @@ import {
   OnlyAdmin,
 } from "src/middleware";
 
-import DashBoardLayout from "src/layout/DashBoardLayout";
 
 import { ADMIN_PATH } from "src/services/defaultSettings";
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
+      <Route path="/" element={
+        <AxiosPrivateProvider>
+          <MainLayout />
+        </AxiosPrivateProvider>
+      }>
+        <Route index element={
+          <CategoryContextProvider>
+            <ProductsContextProvider>
+              <HomePage />
+            </ProductsContextProvider>
+          </CategoryContextProvider>
+        } />
         <Route path="product/:id" element={<ProductPage />} />
-        <Route path="products" element={<Products />} />
+        <Route path="products" element={
+          <CategoryContextProvider>
+            <ProductsContextProvider>
+              <Products />
+            </ProductsContextProvider>
+          </CategoryContextProvider>
+
+        } />
         <Route path="support" element={<Support />} />
 
         <Route
@@ -94,13 +118,21 @@ export default function AppRouter() {
       />
       <Route path={ADMIN_PATH}>
         <Route index element={<Navigate to="login" replace />}></Route>
-        <Route path="login" element={<AdminLogInPage />}></Route>
+        <Route path="login" element={
+          <AdminContextProvider>
+            <AdminLogInPage />
+          </AdminContextProvider>
+        }></Route>
         <Route
           path="panel"
           element={
-            <OnlyAdmin>
-              <DashBoardLayout />
-            </OnlyAdmin>
+            <AdminContextProvider>
+              <AxiosAdminProvider>
+                <OnlyAdmin>
+                  <DashBoardLayout />
+                </OnlyAdmin>
+              </AxiosAdminProvider>
+            </AdminContextProvider>
           }
         >
           <Route path="loginAsUser" element={<LoginAsUser />} />

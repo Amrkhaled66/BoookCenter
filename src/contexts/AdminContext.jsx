@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { adminLogin, logout, refreshToken } from "src/services/api/auth";
 
 const AdminContext = createContext();
 

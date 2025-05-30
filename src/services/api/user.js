@@ -6,8 +6,7 @@ const getProfileInfo = async () => {
 };
 
 const getUserOrders = async () => {
-  const data = await axiosPrivate.get("/user/orders");
-  data;
+  const {data} = await axiosPrivate.get("/user/orders");
   return data;
 };
 

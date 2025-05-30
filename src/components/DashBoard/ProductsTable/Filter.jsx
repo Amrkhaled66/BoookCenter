@@ -49,8 +49,7 @@ const filter = ({ setOptions }) => {
                 <ComboboxDropdown name={"seller"} defaultValue="اختر البائع" options={["كل البائعين", ...sellers.map((cat) => cat.name)]} />
                 <ComboboxDropdown name={"subject"} defaultValue="اختر المادة" options={["كل المواد", ...subjects.map((cat) => cat.name)]} />
             </div>
-            <TransparentBtn bgColor={COLORS["secondColor"]} className={"mx-auto w-full rounded-lg  font-semibold text-white"}>بحث</TransparentBtn>
-
+            <TransparentBtn type="submit"  bgColor={COLORS["secondColor"]} className={"mx-auto w-full rounded-lg  font-semibold text-white"}>بحث</TransparentBtn>
         </form>
     )
 }
