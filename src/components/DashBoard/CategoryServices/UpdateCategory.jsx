@@ -2,10 +2,10 @@ import AdminForm from "src/components/ui/AdminForm";
 import ComboboxDropdown from "src/components/ui/ComboboxDropdown";
 import Switch from "src/components/ui/Switch";
 
-import { useGetAllCategories } from "src/hooks/useAdminMutations";
+import { useGetAllCategories } from "src/hooks/DashBoard/useAdminMutations";
 import { useState } from "react";
 import useFormValidation from "src/hooks/useFormValidation";
-import { useUpdateCategory } from "src/hooks/useAdminMutations";
+import { useUpdateCategory } from "src/hooks/DashBoard/useAdminMutations";
 import Alert from "src/components/ui/Alert";
 
 const validate = (name) => {

@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { useGetAllCategories } from "src/hooks/useAdminMutations";
+import { useGetAllCategories } from "src/hooks/DashBoard/useAdminMutations";
 const categoryContext = createContext();
 
 export default function CategoryContextProvider({ children }) {
@@ -9,7 +9,7 @@ export default function CategoryContextProvider({ children }) {
   );
 
   const selectCategory = (category) => {
-    setSelectedCategory(category);      
+    setSelectedCategory(category);
   };
 
   const ctxValue = {

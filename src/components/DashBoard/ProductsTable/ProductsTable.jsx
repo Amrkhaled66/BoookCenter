@@ -1,6 +1,6 @@
 import arabicData from "src/utils/arabicData";
 import Table from "src/components/ui/Table";
-import { useGetProducts4Admin } from "src/hooks/useAdminMutations";
+import { useGetProducts4Admin } from "src/hooks/DashBoard/useAdminMutations";
 
 import { getYearPlaceHolder } from "src/services/yearServices";
 const columns = [

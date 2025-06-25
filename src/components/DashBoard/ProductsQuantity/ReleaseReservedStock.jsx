@@ -1,7 +1,7 @@
 import {
   useGetExpiredOrders,
   useReleaseReservedStock,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 
 import Alert from "src/components/ui/Alert";
 import TransparentBtn from "src/components/ui/TransparentBtn";

@@ -43,6 +43,8 @@ export default function DeliveryForm() {
     });
   };
 
+  if (!cities?.length) return null
+
   if (isLoading) {
     return (
       <div className="flex h-full w-full items-center justify-center">
@@ -56,7 +58,7 @@ export default function DeliveryForm() {
       <ComboboxDropdown
         width="w-full"
         options={cities.map((city) => city?.name)}
-        value={formData?.city|| ""}
+        value={formData?.city || ""}
         onChange={(value) => updateFormData("city", value)}
         defaultValue={"اختر محافظتك"}
         error={errors.city}
@@ -81,7 +83,7 @@ export default function DeliveryForm() {
         }
         label="العنوان"
         type="text"
-        value={formData?.descriptiveAddress|| ""}
+        value={formData?.descriptiveAddress || ""}
         required
         onChange={(e) => updateFormData("descriptiveAddress", e.target.value)}
       />
@@ -98,7 +100,7 @@ export default function DeliveryForm() {
         required
         label="الهاتف البديل"
         type="text"
-        value={formData?.secondPhone|| ""}
+        value={formData?.secondPhone || ""}
         onChange={(e) => updateFormData("secondPhone", e.target.value)}
       />
 

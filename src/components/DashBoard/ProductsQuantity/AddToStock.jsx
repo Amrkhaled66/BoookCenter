@@ -2,10 +2,10 @@ import InputFiled2nd from "src/components/ui/InputFiled2nd";
 import ComboboxDropdown from "src/components/ui/ComboboxDropdown";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 
-import { useUpdateStock } from "src/hooks/useAdminMutations";
+import { useUpdateStock } from "src/hooks/DashBoard/useAdminMutations";
 import { useEffect, useState } from "react";
-import { useGetProductOptions } from "src/hooks/useAdminMutations";
-import { useGetStockRecord } from "src/hooks/useAdminMutations";
+import { useGetProductOptions } from "src/hooks/DashBoard/useAdminMutations";
+import { useGetStockRecord } from "src/hooks/DashBoard/useAdminMutations";
 
 import Alert from "src/components/ui/Alert";
 
@@ -52,7 +52,6 @@ export default function AddToStock() {
   };
 
   if (isLoading) return <p>Loading...</p>;
-  console.log(chosenProduct);
   return (
     <div className="w-[90%] space-y-14 md:w-[50%]">
       <ComboboxDropdown

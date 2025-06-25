@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 import {
   useGetUserProfile,
   useUpdatePassword,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 import { useNavigate } from "react-router-dom";
 
 import { RiLockPasswordLine } from "react-icons/ri";

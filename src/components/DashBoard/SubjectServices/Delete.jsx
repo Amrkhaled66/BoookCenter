@@ -1,7 +1,7 @@
 import ComboboxDropdown from "src/components/ui/ComboboxDropdown";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 
-import { useDeleteSubject,useGetAllSubjects} from "src/hooks/useAdminMutations";
+import { useDeleteSubject, useGetAllSubjects } from "src/hooks/DashBoard/useAdminMutations";
 import { useState } from "react";
 
 import Alert from "src/components/ui/Alert";

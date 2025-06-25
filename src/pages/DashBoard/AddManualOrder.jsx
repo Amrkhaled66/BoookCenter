@@ -9,7 +9,7 @@ import {
   useGetUserByPhone,
   useGetProductByName4Admin,
   useAddManualOrder
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 import FormatePhoneNum from "src/utils/formatePhoneNum";
 import validatePhoneNum from "src/utils/validatePhoneNum";
 import TransparentBtn from "src/components/ui/TransparentBtn";

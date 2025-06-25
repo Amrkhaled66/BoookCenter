@@ -1,9 +1,9 @@
 import useCart from "src/hooks/useCart";
 import currencyFormatter from "src/utils/currencyFormatter";
-import { getShippingPrice } from "src/services/api/order";
 import { useEffect, useState } from "react";
+import { useSiteConfig } from "src/contexts/configCtx";
 
-import { NEXT_ITEM_FEES } from "src/services/defaultSettings";
+// import { NEXT_ITEM_FEES } from "src/services/defaultSettings";
 const TableHeader = ({ title }) => {
   return (
     <th className="h-20 border-[1px] border-[#6b7280] p-5 font-semibold">
@@ -38,25 +38,22 @@ export default function InvoiceTable({ city }) {
   const { cart, calcAllPrice, cartLength } = useCart();
   const [shippingPrice, setShippingPrice] = useState(0);
 
+  const { config, isLoading } = useSiteConfig();
+
   const total = calcAllPrice();
 
   useEffect(() => {
-    const fetchShippingPrice = async () => {
-      if (!city) return setShippingPrice(0);
+    if (isLoading) return setShippingPrice(0);
 
-      try {
-        const { shippingPrice } = await getShippingPrice(city);
-        setShippingPrice(shippingPrice);
-      } catch (error) {
-        console.error("Error fetching shipping price:", error);
-      }
-    };
-
-    fetchShippingPrice();
+    if (city.toLowerCase() === "cairo" || city.toLowerCase() === "giza") {
+      setShippingPrice(config.shippingPriceCairoAndGiza);
+    } else {
+      setShippingPrice(config.generalShippingPrice);
+    }
   }, [city]);
 
   const totalShipping =
-    shippingPrice + parseInt(cartLength - 1) * NEXT_ITEM_FEES;
+    shippingPrice + parseInt(cartLength - 1) * config?.nextItemFees;
 
   return (
     <table className="mx-auto w-[90%] overflow-scroll sm:w-[90%]">

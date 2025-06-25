@@ -6,7 +6,7 @@ import {
   useGetAllCategories,
   useGetProductOptions,
   useDeleteProduct,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 import { useState, useEffect } from "react";
 
 import Alert from "src/components/ui/Alert";

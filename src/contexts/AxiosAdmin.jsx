@@ -5,7 +5,7 @@ import { refreshToken } from "src/services/api/auth";
 import Alert from "src/components/ui/Alert";
 import { getAdminToken } from "src/services/authServices";
 import { useAdminLogout } from "src/hooks/useAuthMutations";
-import useAdminContext from "src/hooks/useAdminContext";
+import useAdminContext from "src/hooks/DashBoard/useAdminContext";
 import { ADMIN_PATH } from "src/services/defaultSettings";
 import { axiosAdmin } from "src/api/axios";
 

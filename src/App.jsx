@@ -1,11 +1,12 @@
 import AppRouter from "src/routes/AppRouter";
 
 import IsNavStickyContextProvider from "./contexts/isNavSticky";
-import ShowMobileMenuContextProvider from "./contexts/ShowMobileMenu"
+import ShowMobileMenuContextProvider from "./contexts/ShowMobileMenu";
 import CartContextProvider from "./contexts/cart";
 import WidthContextProvider from "./contexts/widthContext";
 import SideBarContextProvider from "./contexts/useSideBar";
 import AuthContextProvider from "./contexts/authContext";
+import { ConfigProvider } from "./contexts/configCtx";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -30,7 +31,9 @@ function App() {
             <AuthContextProvider>
               <IsNavStickyContextProvider>
                 <ShowMobileMenuContextProvider>
-                  <AppRouter />
+                  <ConfigProvider>
+                    <AppRouter />
+                  </ConfigProvider>
                 </ShowMobileMenuContextProvider>
               </IsNavStickyContextProvider>
             </AuthContextProvider>

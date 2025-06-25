@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useGetAllCategories } from "src/hooks/useAdminMutations";
+import { useGetAllCategories } from "src/hooks/DashBoard/useAdminMutations";
 import useFormValidation from "src/hooks/useFormValidation";
-import { useAddNewSeller } from "src/hooks/useAdminMutations";
+import { useAddNewSeller } from "src/hooks/DashBoard/useAdminMutations";
 
 import getItemId from "src/services/getItemId";
 

@@ -12,7 +12,7 @@ import {
 import Alert from "src/components/ui/Alert";
 
 import useAuth from "./useAuth";
-import useAdminContext from "./useAdminContext";
+import useAdminContext from "./DashBoard/useAdminContext";
 
 
 import { ADMIN_PATH } from "src/services/defaultSettings";

@@ -1,7 +1,12 @@
 import Arrow from "src/assets/Arrow.svg?react";
 
-import ShadowButton from "../ui/ShadowButton";
+import { useSiteConfig } from "src/contexts/configCtx.jsx";
 export default function LeftPart() {
+  const { config, isLoading } = useSiteConfig();
+
+  if (isLoading) return null;
+
+  const { whatsappChannel, whatsappNumber } = config;
   return (
     <div className="flex h-auto w-full flex-col gap-y-14 lg:w-1/2">
       <div className="relative mx-auto">
@@ -14,16 +19,29 @@ export default function LeftPart() {
         </p>
       </div>
       <div className="flex flex-col gap-y-4">
-        <button className="mx-auto min-w-60 rounded-md bg-fourth-color px-12 py-2 transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl">
-          أنضم لقناة الواتس
-        </button>
-        <span className="mx-auto font-cairo text-2xl font-bold text-white">
-          {" "}
-          &lt; أو/ &gt;
-        </span>
-        <button className="mx-auto w-fit min-w-60 rounded-md bg-second-color py-2 text-white transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl">
-          تواصل مع الدعم
-        </button>
+        {whatsappChannel && (
+          <a
+            href={whatsappChannel}
+            target="_blank"
+            className="mx-auto min-w-60 rounded-md bg-fourth-color px-12 py-2 text-center transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl"
+          >
+            أنضم لقناة الواتس
+          </a>
+        )}
+        {whatsappNumber && whatsappChannel && (
+          <span className="mx-auto font-cairo text-2xl font-bold text-white">
+            &lt; أو/ &gt;
+          </span>
+        )}
+        {whatsappNumber && (
+          <a
+            href={whatsappNumber}
+            target="_blank"
+            className="mx-auto w-fit min-w-60 rounded-md bg-second-color py-2 text-center text-white transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl"
+          >
+            تواصل مع الدعم
+          </a>
+        )}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import {
   useGetAllSubjects,
   useUpdateProduct,
   useGetProductOptions,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 
 import Switch from "src/components/ui/Switch";
 import TransparentBtn from "src/components/ui/TransparentBtn";
@@ -17,7 +17,7 @@ import getItemId from "src/services/getItemId";
 import { COLORS } from "src/services/defaultSettings";
 
 import Alert from "src/components/ui/Alert";
-import { useGetProduct4Admin } from "src/hooks/useAdminMutations";
+import { useGetProduct4Admin } from "src/hooks/DashBoard/useAdminMutations";
 export default function Update() {
   const [selectedCategory, setSelectedCategory] = useState();
   const [selectedProduct, setSelectedProduct] = useState();

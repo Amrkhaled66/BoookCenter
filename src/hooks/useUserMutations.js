@@ -7,7 +7,7 @@ import {
 const useGetOrders = () => {
   return useQuery({
     queryKey: ["orders"],
-    queryFn: () => getUserOrdersRequest(axiosPrivate),
+    queryFn: () => getUserOrdersRequest(),
   });
 };
 

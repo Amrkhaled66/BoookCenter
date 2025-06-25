@@ -34,7 +34,8 @@ import {
   Category,
   Seller,
   ProductsQuantity,
-  ProductsTable
+  ProductsTable,
+  SiteConfig
 } from "src/pages";
 
 import {
@@ -145,6 +146,7 @@ export default function AppRouter() {
           <Route path="category" element={<Category />} />
           <Route path="seller" element={<Seller />} />
           <Route path="productsTable" element={<ProductsTable />} />
+          <Route path="config" element={<SiteConfig />} />
         </Route>
       </Route>
     </Routes>

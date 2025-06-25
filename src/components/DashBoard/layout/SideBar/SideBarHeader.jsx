@@ -1,6 +1,6 @@
-import useSideBar from "src/hooks/useSideBar";
+import useSideBar from "src/hooks/ui/useSideBar";
 
-import useWidth from "src/hooks/useWidthContext";
+import useWidth from "src/hooks/ui/useWidthContext";
 
 import { Icon } from "@iconify/react";
 export default function SideBarHeader() {

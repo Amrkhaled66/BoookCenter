@@ -3,7 +3,7 @@ import ComboboxDropdown from 'src/components/ui/ComboboxDropdown'
 import TransparentBtn from 'src/components/ui/TransparentBtn'
 import Loader from 'src/components/ui/icons/Loader'
 
-import { useGetAllCategories, useGetAllSellers, useGetAllSubjects, useGetProductOptions } from 'src/hooks/useAdminMutations'
+import { useGetAllCategories, useGetAllSellers, useGetAllSubjects, useGetProductOptions } from 'src/hooks/DashBoard/useAdminMutations'
 
 import getItemId from 'src/services/getItemId'
 import { COLORS } from 'src/services/defaultSettings'
@@ -49,7 +49,7 @@ const filter = ({ setOptions }) => {
                 <ComboboxDropdown name={"seller"} defaultValue="اختر البائع" options={["كل البائعين", ...sellers.map((cat) => cat.name)]} />
                 <ComboboxDropdown name={"subject"} defaultValue="اختر المادة" options={["كل المواد", ...subjects.map((cat) => cat.name)]} />
             </div>
-            <TransparentBtn type="submit"  bgColor={COLORS["secondColor"]} className={"mx-auto w-full rounded-lg  font-semibold text-white"}>بحث</TransparentBtn>
+            <TransparentBtn type="submit" bgColor={COLORS["secondColor"]} className={"mx-auto w-full rounded-lg  font-semibold text-white"}>بحث</TransparentBtn>
         </form>
     )
 }

@@ -13,12 +13,12 @@ const EndedSessionModal = () =>
     confirmButtonText: "Ok",
   });
 
-export const AxiosContext = createContext(null); 
+export const AxiosContext = createContext(null);
 
 export const AxiosPrivateProvider = ({ children }) => {
   const logoutMutate = useLogout();
   const navigate = useNavigate();
-  const interceptorsRef = useRef  ({
+  const interceptorsRef = useRef({
     request: null,
     response: null,
   });
@@ -30,7 +30,9 @@ export const AxiosPrivateProvider = ({ children }) => {
         EndedSessionModal();
       },
       onError: () => {
-        console.error("Logout failed");
+        navigate("/login", { replace: true });
+        EndedSessionModal();
+        // console.error("Logout failed");
       },
     });
   }, [logoutMutate, navigate]);
@@ -46,7 +48,7 @@ export const AxiosPrivateProvider = ({ children }) => {
         }
         return config;
       },
-      (error) => Promise.reject(error)
+      (error) => Promise.reject(error),
     );
 
     const responseInterceptor = axiosPrivate.interceptors.response.use(
@@ -56,7 +58,7 @@ export const AxiosPrivateProvider = ({ children }) => {
           handleSessionEnd();
         }
         return Promise.reject(error);
-      }
+      },
     );
 
     interceptorsRef.current.request = requestInterceptor;
@@ -64,17 +66,17 @@ export const AxiosPrivateProvider = ({ children }) => {
 
     return () => {
       if (interceptorsRef.current.request !== null) {
-        axiosPrivate.interceptors.request.eject(interceptorsRef.current.request);
+        axiosPrivate.interceptors.request.eject(
+          interceptorsRef.current.request,
+        );
       }
       if (interceptorsRef.current.response !== null) {
-        axiosPrivate.interceptors.response.eject(interceptorsRef.current.response);
+        axiosPrivate.interceptors.response.eject(
+          interceptorsRef.current.response,
+        );
       }
     };
   }, [handleSessionEnd]);
 
-  return (
-    <AxiosContext.Provider value={null}>
-      {children}
-    </AxiosContext.Provider>
-  );
+  return <AxiosContext.Provider value={null}>{children}</AxiosContext.Provider>;
 };

@@ -9,7 +9,7 @@ import {
   useUpdateSeller,
   useGetAllSellers,
   useGetAllCategories,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 
 import getItemId from "src/services/getItemId";
 import Loader from "src/components/ui/icons/Loader";

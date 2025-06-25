@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import logo from "src/assets/logo.svg";
 
 // Hooks
-import useIsNavStickyContext from "src/hooks/useIsNavSticky";
+import useIsNavStickyContext from "src/hooks/ui/useIsNavSticky";
 import useShowMobileMenu from "src/hooks/useShowMobileMenu";
 import useAuth from "src/hooks/useAuth";
 

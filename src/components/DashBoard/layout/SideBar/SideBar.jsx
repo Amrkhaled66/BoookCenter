@@ -1,7 +1,7 @@
 import { links } from "./linksData";
 import SideBarHeader from "./SideBarHeader";
-import useSideBar from "src/hooks/useSideBar";
-import useWidth from "src/hooks/useWidthContext";
+import useSideBar from "src/hooks/ui/useSideBar";
+import useWidth from "src/hooks/ui/useWidthContext";
 import { useEffect } from "react";
 
 import SideBarItem from "./SideBarItem";

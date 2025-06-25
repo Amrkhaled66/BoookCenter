@@ -4,7 +4,7 @@ import {
   useGetAllSellers,
   useGetAllSubjects,
   useAddNewProduct,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 
 import Switch from "src/components/ui/Switch";
 import TransparentBtn from "src/components/ui/TransparentBtn";

@@ -8,6 +8,7 @@ import { GiTeacher } from "react-icons/gi";
 import { FaBoxOpen } from "react-icons/fa";
 import { RiStockLine } from "react-icons/ri";
 import { BsBoxes } from "react-icons/bs";
+import { GrConfigure } from "react-icons/gr";
 
 export const links = [
   {
@@ -51,8 +52,13 @@ export const links = [
     to: "productsQuantity",
   },
   {
-    name:"جدول المنتجات",
+    name: "جدول المنتجات",
     icon: <BsBoxes />,
-    to:"productsTable"
-  }
+    to: "productsTable",
+  },
+  {
+    name: "الكونفج",
+    icon: <GrConfigure />,
+    to: "config",
+  },
 ];

@@ -1,7 +1,7 @@
 import {
   useGetAllSellers,
   useGetAllSubjects,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 import { useProducts } from "src/contexts/products";
 
 import ComboboxDropdown from "src/components/ui/ComboboxDropdown";

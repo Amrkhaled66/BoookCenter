@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring } from "framer-motion";
-import useIsNavStickyContext from "src/hooks/useIsNavSticky";
+import useIsNavStickyContext from "src/hooks/ui/useIsNavSticky";
 export default function Progressbar() {
   const { isSticky } = useIsNavStickyContext();
   const { scrollYProgress } = useScroll();

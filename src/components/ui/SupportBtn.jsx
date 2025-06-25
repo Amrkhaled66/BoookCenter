@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import SupportIcon from "src/assets/supportIcon.svg?react";
 import { motion } from "framer-motion";
-
+import { useLocation } from "react-router-dom";
 export default function SupportBtn() {
+  const { pathname } = useLocation();
+
+  if (pathname !== "/support" || pathname !== "/cart") return;
   return (
     <motion.div
       initial={{ x: -300, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeIn" }}
-      className="fixed bottom-5 z-[1000] left-5 rounded-3xl transition-all"
+      className="fixed bottom-5 left-5 z-[1000] rounded-3xl transition-all"
     >
       <Link
         className="relative flex items-center justify-center gap-x-2 rounded-lg duration-300 hover:scale-90"

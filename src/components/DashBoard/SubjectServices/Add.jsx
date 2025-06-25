@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useFormValidation from "src/hooks/useFormValidation";
-import { useAddNewSubject } from "src/hooks/useAdminMutations";
+import { useAddNewSubject } from "src/hooks/DashBoard/useAdminMutations";
 
 import Switch from "src/components/ui/Switch";
 import AdminForm from "src/components/ui/AdminForm";

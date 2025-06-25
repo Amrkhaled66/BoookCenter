@@ -7,7 +7,7 @@ import useFormValidation from "src/hooks/useFormValidation";
 import {
   useUpdateSubject,
   useGetAllSubjects,
-} from "src/hooks/useAdminMutations";
+} from "src/hooks/DashBoard/useAdminMutations";
 import Alert from "src/components/ui/Alert";
 
 const validate = (name) => {

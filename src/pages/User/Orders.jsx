@@ -11,9 +11,7 @@ import { Icon } from "@iconify/react";
 export default function Orders() {
   const { data, isLoading, isError } = useGetOrders();
 
-  console.log(data,isLoading)
-
-  if (data?.data.length === 0) {
+  if (data?.length === 0) {
     return (
       <div className="flex h-screen w-full flex-1 flex-col font-cairo">
         <ContainerHeader
@@ -35,8 +33,8 @@ export default function Orders() {
       </div>
     );
   }
-  const Orders = data?.data ? [...data.data].reverse() : [];
-  
+  const Orders = data ? [...data].reverse() : [];
+
   return (
     <div className="flex h-full w-full flex-1 flex-col font-cairo">
       <ContainerHeader

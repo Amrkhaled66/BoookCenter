@@ -3,7 +3,7 @@ import Alert from "src/components/ui/Alert";
 
 import AdminForm from "src/components/ui/AdminForm";
 
-import { useGetUserId } from "src/hooks/useAdminMutations";
+import { useGetUserId } from "src/hooks/DashBoard/useAdminMutations";
 import useFormValidation from "src/hooks/useFormValidation";
 
 import { CgProfile } from "react-icons/cg";
