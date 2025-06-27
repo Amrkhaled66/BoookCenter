@@ -26,18 +26,23 @@ const ProfileSection = ({
   <div
     className={`${textColor} flex h-auto min-h-80 w-full flex-col items-center gap-y-6 rounded-xl px-6 py-5 ${bgColor} drop-shadow-xl sm:w-[65%] lg:w-1/2`}
   >
-    <div
-      className={`relative flex w-fit items-start gap-x-2 rounded-lg text-lg font-bold`}
-    >
-      <Icon icon={icon} width="24" height="24" />
-      <span>{title}</span>
+    <div className="space-y-1">
+      <div
+        className={`relative flex w-fit items-start gap-x-2 rounded-lg text-lg font-bold`}
+      >
+        <Icon icon={icon} width="24" height="24" />
+        <span>{title}</span>
+      </div>
+      <div class="line-container">
+        <div class="animated-line"></div>
+      </div>
     </div>
     <div className={`mx-auto w-[95%] space-y-6 rounded-lg`}>{children}</div>
   </div>
 );
 
 const ProfileDetails = ({ user }) => (
-  <div className="flex flex-col items-center justify-between gap-x-5 gap-y-4 lg:flex-row">
+  <div className="flex flex-col items-center justify-between gap-x-5 gap-y-4 sm:flex-row">
     <ProfileSection
       bgColor="bg-[#d8eefe]"
       textColor={"text-black"}

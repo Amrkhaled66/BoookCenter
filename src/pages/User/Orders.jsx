@@ -51,7 +51,7 @@ export default function Orders() {
           </div>
         </div>
       ) : (
-        <div className="mx-auto grid w-[85%] grid-cols-1 justify-between gap-y-6 pt-10 lg:grid-cols-2">
+        <div className="mx-auto grid w-[95%] grid-cols-1 justify-between gap-4 pt-10 sm:grid-cols-2 sm:gap-5 lg:w-[85%] lg:gap-y-6">
           {Orders.map((order) => {
             if (!order) return;
             return (

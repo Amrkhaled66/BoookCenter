@@ -55,7 +55,7 @@ export default function Navbar() {
 
         <Link
           to="/"
-          className="relative  flex justify-center lg:justify-end sm:w-96 md:order-none"
+          className="relative  flex justify-end  lg:justify-end sm:w-96 md:order-none"
         >
           <img className="mx-auto w-20 md:mx-0" src={logo} alt="Book Center" />
         </Link>

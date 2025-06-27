@@ -1,4 +1,3 @@
-
 const ProductBox = ({ children, className }) => {
   return (
     <span
@@ -11,8 +10,7 @@ const ProductBox = ({ children, className }) => {
 
 export default function ContentPart() {
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-y-12 font-cairo lg:w-[40%] lg:items-start">
-      
+    <div className="flex w-full flex-col items-center justify-center gap-y-9 font-cairo lg:w-[40%] lg:items-start">
       <p className="w-full text-right text-5xl font-black tracking-wide lg:text-start">
         <span className="text-stroke relative text-white">
           مين بقا . . .
@@ -21,17 +19,23 @@ export default function ContentPart() {
           </span>
         </span>
       </p>
-      <p className="text-lg font-bold leading-relaxed tracking-wide sm:text-xl">
-        بوك سنتر هي اول شركة في مصر تجمع بين <br />
-        الكتب الدراسية + الكتب العامة + الروايات <br /> نتمني اننا نقدر نساعدك
-        انك توصل لهدفك .
+      <p className="text-lg font-bold leading-[22px] tracking-wide sm:text-xl">
+        بوك سنتر هو أول بزنس في مصر بيجمع لك كل اللي محتاجه عشان تذاكر وتنجح
+        <br />
+        هدفنا نوفر لك كل حاجة تساعدك توصل لأهدافك الدراسية.
       </p>
       <div className="flex items-center gap-x-2 font-semibold">
         <ProductBox className={"bg-second-color text-white"}>
           كتب دراسية
         </ProductBox>
-        +<ProductBox className={"bg-main-color text-white"}>روايات</ProductBox>+
-        <ProductBox className={"bg-fourth-color text-black"}>كتب عامة</ProductBox>
+        +
+        <ProductBox className={"bg-main-color text-white"}>
+          أدوات تنظيم
+        </ProductBox>
+        +
+        <ProductBox className={"bg-fourth-color text-black"}>
+          منتجات تحفيزية
+        </ProductBox>
       </div>
     </div>
   );
