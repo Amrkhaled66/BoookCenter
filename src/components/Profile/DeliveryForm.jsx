@@ -43,18 +43,18 @@ export default function DeliveryForm() {
     });
   };
 
-  if (!cities?.length) return null
-
   if (isLoading) {
     return (
-      <div className="flex h-full w-full items-center justify-center">
-        <Loader />
+      <div className="flex h-full w-full font-bold gap-x-2 text-xl items-center justify-center">
+        <Loader /> يتم التحميل
       </div>
     );
   }
 
+  if (!cities?.length) return null;
+
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-col space-y-12">
+    <form onSubmit={handleSubmit} className="flex  w-full flex-col space-y-12">
       <ComboboxDropdown
         width="w-full"
         options={cities.map((city) => city?.name)}
@@ -110,7 +110,6 @@ export default function DeliveryForm() {
       >
         {isPending ? <Loader /> : "حفظ التعديلات"}
       </button>
-
     </form>
   );
 }

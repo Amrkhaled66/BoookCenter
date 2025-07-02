@@ -12,14 +12,7 @@ import { useGetProductById } from "src/services/productsServices";
 
 import Loader from "src/components/ui/icons/Loader";
 
-const BackgroundWave = function () {
-  return (
-    <div className="absolute bottom-0 left-0 -z-10 h-full w-full bg-waveBG"></div>
-  );
-};
-
 export default function ProductPage() {
-
   const { id } = useParams();
   const { data: product, isLoading, isError } = useGetProductById(id);
 
@@ -29,7 +22,7 @@ export default function ProductPage() {
         className={`relative flex h-screen w-screen items-center bg-card-color`}
       >
         <ErrorContainer>
-          <span className="flex w-full justify-center gap-x-4 font-cairo text-2xl">
+          <span className="flex w-full items-center justify-center gap-x-4 font-cairo text-2xl">
             يتم الان تحميل المنتج <Loader />
           </span>
         </ErrorContainer>
@@ -41,7 +34,6 @@ export default function ProductPage() {
     return (
       <>
         <ProductNotFound />
-        <BackgroundWave />
       </>
     );
   }
@@ -59,7 +51,7 @@ export default function ProductPage() {
     isUnAvailable,
     unAvailabilityNote,
     seller,
-    inStock
+    inStock,
   } = product || {};
 
   return (

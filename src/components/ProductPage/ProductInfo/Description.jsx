@@ -18,7 +18,7 @@ const Description = ({
       <p className="mx-auto mt-5 min-h-36 w-full rounded-3xl border-[9px] border-wood-color bg-main-color px-3 py-3 font-cairo text-sm font-bold !leading-7 tracking-wide text-white sm:w-[90%] sm:px-6 sm:py-6 sm:text-base">
         {description}
         {isUnAvailable && (
-          <p className="mt-8 rounded-lg border-2 border-dashed  border-red-300 text-center text-sm px-5 py-3 ">
+          <p className="mt-8 rounded-lg border-2 border-dashed border-red-300 px-5 py-3 text-center text-sm">
             {unAvailabilityNote}
           </p>
         )}
