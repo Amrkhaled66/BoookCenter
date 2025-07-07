@@ -35,7 +35,8 @@ import {
   Seller,
   ProductsQuantity,
   ProductsTable,
-  SiteConfig
+  SiteConfig,
+  Analytics
 } from "src/pages";
 
 import {
@@ -137,6 +138,7 @@ export default function AppRouter() {
           }
         >
           <Route path="loginAsUser" element={<LoginAsUser />} />
+          <Route path="analytics" element={<Analytics />} />
           <Route path="UserProfile" element={<GetUserProfile />} />
           <Route path="productsQuantity" element={<ProductsQuantity />} />
           <Route path="UserProfile/:id" element={<UserProfile />} />

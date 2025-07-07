@@ -10,7 +10,12 @@ import { ADMIN_PATH } from "src/services/defaultSettings";
 import { axiosAdmin } from "src/api/axios";
 
 function EndedSessionModal() {
-  return Alert("انتهت جلسة تسجيل الدخول", "برجاء تسجيل الدخول مرة أخرى", "warning", "حسنا");
+  return Alert(
+    "انتهت جلسة تسجيل الدخول",
+    "برجاء تسجيل الدخول مرة أخرى",
+    "warning",
+    "حسنا",
+  );
 }
 
 export const AxiosAdminContext = createContext(null);
@@ -41,7 +46,7 @@ export const AxiosAdminProvider = ({ children }) => {
         }
         return config;
       },
-      (error) => Promise.reject(error)
+      (error) => Promise.reject(error),
     );
 
     const responseInterceptor = axiosAdmin.interceptors.response.use(
@@ -54,7 +59,8 @@ export const AxiosAdminProvider = ({ children }) => {
           try {
             const data = await refreshToken("admin");
             adminLogin(data);
-            prevRequest.headers["Authorization"] = `Bearer ${data?.accessToken}`;
+            prevRequest.headers["Authorization"] =
+              `Bearer ${data?.accessToken}`;
             return axiosAdmin(prevRequest);
           } catch (err) {
             handleSessionEnd();
@@ -62,7 +68,7 @@ export const AxiosAdminProvider = ({ children }) => {
           }
         }
         return Promise.reject(error);
-      }
+      },
     );
 
     interceptorsRef.current.request = requestInterceptor;
@@ -73,7 +79,9 @@ export const AxiosAdminProvider = ({ children }) => {
         axiosAdmin.interceptors.request.eject(interceptorsRef.current.request);
       }
       if (interceptorsRef.current.response !== null) {
-        axiosAdmin.interceptors.response.eject(interceptorsRef.current.response);
+        axiosAdmin.interceptors.response.eject(
+          interceptorsRef.current.response,
+        );
       }
     };
   }, [adminLogin, handleSessionEnd]);

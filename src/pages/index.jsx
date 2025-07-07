@@ -11,8 +11,6 @@ export { default as DeliveryInfo } from "./User/DeliveryInfo";
 export { default as Checkout } from "./CheckOut";
 export { default as Support } from "./Support";
 
-
-
 // DashBoard directory
 export { default as LoginAsUser } from "./DashBoard/LoginAsUser";
 export { default as GetUserProfile } from "./DashBoard/GetUserProfile";
@@ -26,3 +24,4 @@ export { default as Seller } from "./DashBoard/Seller";
 export { default as ProductsQuantity } from "./DashBoard/ProductsQuantity";
 export { default as ProductsTable } from "./DashBoard/Products";
 export { default as SiteConfig } from "./DashBoard/SiteConfig";
+export { default as Analytics } from "./DashBoard/Analytics";

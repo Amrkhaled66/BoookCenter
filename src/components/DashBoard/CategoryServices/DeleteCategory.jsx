@@ -32,7 +32,7 @@ export default function DeleteCategory() {
   }
 
   return (
-    <div className="w-full space-y-12">
+    <div className=" w-[85%] lg:w-[50%] space-y-12">
       <ComboboxDropdown
         width=" w-full"
         defaultValue="اختر القسم"

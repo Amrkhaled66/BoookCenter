@@ -66,7 +66,7 @@ export default function UpdateCategory() {
   return (
     <div className="w-full space-y-12">
       <ComboboxDropdown
-        width=" w-[85%] sm:w-[50%]"
+        width=" w-[85%] mx-auto sm:w-[50%]"
         defaultValue="اختر القسم"
         options={data.map((category) => category.name)}
         onChange={setChosenCategory}

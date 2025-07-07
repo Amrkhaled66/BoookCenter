@@ -9,13 +9,20 @@ import { FaBoxOpen } from "react-icons/fa";
 import { RiStockLine } from "react-icons/ri";
 import { BsBoxes } from "react-icons/bs";
 import { GrConfigure } from "react-icons/gr";
+import { IoAnalyticsSharp } from "react-icons/io5";
 
 export const links = [
+  {
+    name: "الاحصائيات",
+    icon: <IoAnalyticsSharp />,
+    to: "analytics",
+  },
   {
     name: "تسجيل الدخول كـ طالب",
     icon: <CiLogin />,
     to: "loginAsUser",
   },
+
   {
     name: "اٍنشاء اوردر يدوي",
     icon: <VscDiffAdded />,

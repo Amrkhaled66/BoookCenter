@@ -11,7 +11,7 @@ const Description = ({
   unAvailabilityNote,
 }) => {
   return (
-    <div className="relative border-b-4 border-second-color py-6">
+    <div className="relative border-b-4 border-second-color  overflow-hidden py-6">
       <p className="mx-auto w-fit border-[9px] border-wood-color px-2 py-1 text-center font-cairo text-base font-black sm:mx-0 sm:text-lg">
         وصف الكتاب
       </p>
@@ -23,8 +23,8 @@ const Description = ({
           </p>
         )}
       </p>
-      <div className="flex flex-col-reverse items-center sm:flex-row">
-        <div className="mr-0 mt-auto translate-y-6 sm:w-fit xl:mr-12">
+      <div className="flex flex-col-reverse items-center  sm:flex-row">
+        <div className="mr-0 mt-auto translate-y-7 sm:w-fit xl:mr-12">
           <div className="translate-y-1 text-nowrap rounded-2xl border-[6px] border-main-color bg-white px-6 py-2 text-center text-2xl font-bold sm:px-4 sm:py-4">
             <p>{discountPrice > 0 && currencyFormatter(discountPrice)}</p>
             <p
@@ -39,8 +39,8 @@ const Description = ({
         </div>
         {items.length > 0 && (
           <div className="mr-auto flex w-[80%] translate-x-9 flex-col items-end">
-            <Stikes className="w-full -translate-y-1 sm:w-[60%]" />
-            <div className="w-full -translate-y-2 space-y-2 rounded-3xl border-8 border-wood-color bg-[#FFFCE5] px-5 py-3 font-semibold tracking-wider sm:w-[70%] sm:py-6">
+            <Stikes className="w-full -translate-y-3 sm:w-[60%]" />
+            <div className="w-full -translate-y-5 space-y-2 rounded-3xl border-8 border-wood-color bg-[#FFFCE5] px-5 py-3 font-semibold tracking-wider sm:w-[70%] sm:py-6">
               {items?.map(
                 (item) => item.length > 0 && <p key={item}>📚 {item}</p>,
               )}
