@@ -19,9 +19,8 @@ export default function ProductCard({
     seller,
     id,
   };
-
   return (
-    <div className="mx-auto flex min-h-fit w-full max-w-[300px] flex-col items-center gap-y-3 overflow-hidden rounded-lg border-[1px] border-black bg-card-color py-7 font-cairo text-main-text--color drop-shadow-md transition-all duration-300 sm:py-4 lg:py-2 md:w-full">
+    <div className="mx-auto flex min-h-fit w-full max-w-[300px] flex-col items-center  justify-between overflow-hidden rounded-lg border-[1px] border-black bg-card-color py-7 font-cairo text-main-text--color drop-shadow-md transition-all duration-300 sm:py-4 md:w-full lg:py-2">
       {/* Product image */}
       <Link to={"/product/" + id}>
         <div className="bg-main-text--colo w-full overflow-hidden px-5 drop-shadow-xl">

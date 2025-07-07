@@ -4,16 +4,16 @@ import { RiStockLine } from "react-icons/ri";
 
 import { useState } from "react";
 
-import ReleaseReservedStock from "src/components/DashBoard/ProductsQuantity/ReleaseReservedStock";
+// import ReleaseReservedStock from "src/components/DashBoard/ProductsQuantity/ReleaseReservedStock";
 import AddToStock from "src/components/DashBoard/ProductsQuantity/AddToStock";
 
 const actionComponents = [
+  // {
+  //   title: "هنخلي المنتجات المحجوزة قابلة للحجز ؟",
+  //   element: (props) => <ReleaseReservedStock {...props} />,
+  // },
   {
-    title: "هنخلي المنتجات المحجوزة قابلة للحجز ؟",
-    element: (props) => <ReleaseReservedStock {...props} />,
-  },
-  {
-    title: "أضافة الي العدد القابل للحجز",
+    title: "تعديل عدد المنتج",
     element: (props) => <AddToStock {...props} />,
   },
 ];

@@ -77,7 +77,7 @@ export default function Products() {
             key={product._id}
             title={product.name}
             stockQuantity={product.inStock}
-            image={`${import.meta.env.VITE_API_URL}/${product.image}`}
+            image={`${import.meta.env.VITE_API_URL}${product.image}`}
             originalPrice={product.price}
             discountPrice={product.discountPrice}
             seller={product.seller.name}

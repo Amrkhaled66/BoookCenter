@@ -23,6 +23,7 @@ export default {
       },
       colors: {
         "main-color": "var(--main-color)",
+        "main-color-100": "var(--main-color-100)",
         "second-color": "var(--second-color)",
         "fourth-color": "var(--fourth-color)",
         "darkAndWhite-color": "var(--darkAndWhite-color)",

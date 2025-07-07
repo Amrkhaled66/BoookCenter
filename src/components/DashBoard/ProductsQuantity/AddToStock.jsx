@@ -94,7 +94,7 @@ export default function AddToStock() {
           <ComboboxDropdown
             name="type"
             defaultValue="الاضافة هتبقي أيه؟"
-            options={["شحنة جديدة", "زيادة امنة", "اوردر مانول"]}
+            options={["تعديل عدد المنتج بعد المراجعة","شحنة جديدة", "زيادة امنة", "اوردر مانول"]}
           />
           <InputFiled2nd name="note" label="ملاحظة" />
           <TransparentBtn

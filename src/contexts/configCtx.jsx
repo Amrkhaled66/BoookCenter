@@ -7,13 +7,13 @@ const ConfigContext = createContext();
 
 // 2. Provider
 export const ConfigProvider = ({ children }) => {
-  const { data: config, isLoading, error, refetch } = useQuery({
+  const { data: config, isLoading,isError, refetch } = useQuery({
     queryKey: ["siteConfig"],
     queryFn: fetchSiteConfig,
   });
 
   return (
-    <ConfigContext.Provider value={{ config, isLoading, error, refetch }}>
+    <ConfigContext.Provider value={{ config, isLoading, isError, refetch }}>
       {children}
     </ConfigContext.Provider>
   );

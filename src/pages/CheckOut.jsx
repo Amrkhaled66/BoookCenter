@@ -61,7 +61,7 @@ const CheckOut = () => {
         <PageHeader title={"مراجعة الفاتورة"} />
       </div>
       <div className="w-screen">
-        <div className="flex w-full flex-col justify-between gap-x-16 gap-y-16 pt-10 sm:px-8">
+        <div className="flex w-full flex-col justify-between gap-x-16 gap-y-16 sm:px-8">
           <DeliveryInfo
             errors={errors}
             formData={formData}

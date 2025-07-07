@@ -82,6 +82,11 @@ const SiteConfigForm = () => {
             label: "Next Item Fees",
             type: "number",
           },
+          {
+            name: "invoiceEndedHours",
+            label: "Invoice Ended Hours",
+            type: "number",
+          },
         ].map(({ name, label, type = "text" }) => (
           <div key={name} className="flex flex-col gap-1">
             <label htmlFor={name} className="text-sm font-medium text-gray-700">

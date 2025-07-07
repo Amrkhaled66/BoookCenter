@@ -5,7 +5,7 @@ import Stikes from "src/assets/Stikes.svg?react";
 function CardInfo({ originalPrice, discountPrice, title, seller }) {
   return (
     <div className="relative flex h-fit w-full flex-col items-center justify-between">
-      <h3 className="relative my-auto w-full border-b-[1px] border-black px-4 py-6 text-center font-mainFont text-xl font-bold">
+      <h3 className="relative my-auto w-full border-b-[1px] border-black px-4 py-4 text-center font-mainFont text-xl font-bold">
         {title}
       </h3>
       <div className="flex w-full flex-col gap-y-3 border-b-[1px] border-black py-5">

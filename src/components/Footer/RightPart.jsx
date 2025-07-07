@@ -3,7 +3,7 @@ import { useSiteConfig } from "src/contexts/configCtx.jsx";
 import logo2 from "src/assets/logo2.svg";
 import Whatsapp from "src/assets/whatsapp.svg?react";
 import Facebook from "src/assets/facebook.svg?react";
-import Instagram from "src/assets/instagram.png";
+import Instagram from "src/assets/instagram.svg";
 import Tiktok from "src/assets/tiktok.png";
 
 const SocialIcons = ({ href, icon }) => {
@@ -18,9 +18,9 @@ const SocialIcons = ({ href, icon }) => {
   );
 };
 export default function RightPart() {
-  const { config, isLoading } = useSiteConfig();
+  const { config, isLoading,isError } = useSiteConfig();
 
-  if (isLoading) return null;
+  if (isLoading ||isError) return null;
 
   return (
     <div className="flex w-full flex-col items-center gap-y-12 lg:w-1/2">

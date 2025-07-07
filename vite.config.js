@@ -11,14 +11,9 @@ export default defineConfig({
       },
     }),
     svgr(),
-    // Checker({
-    //   eslint: {
-    //     lintCommand: 'eslint "./src/**/*.{js,jsx}"', // Run ESLint during build
-    //   },
-    // }),
   ],
   server: {
-    port: 3002,
+    port: 3001,
    },
   resolve: {
     alias: {

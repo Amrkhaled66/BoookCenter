@@ -18,6 +18,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import Alert from "src/components/ui/Alert";
 
+import { COLORS } from "src/services/defaultSettings";
 const validate = (password) => {
   const errors = {};
 

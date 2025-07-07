@@ -6,12 +6,7 @@ import { axiosPrivate } from "src/api/axios";
 import { useLogout } from "src/hooks/useAuthMutations";
 
 const EndedSessionModal = () =>
-  Alert({
-    title: "Session Expired",
-    text: "Please login again",
-    icon: "warning",
-    confirmButtonText: "Ok",
-  });
+  Alert("تم انتهاء جلسة تسجيل الدخول", "برجاء تسجيل الدخول مرة اخري", "warning", "Ok");
 
 export const AxiosContext = createContext(null);
 

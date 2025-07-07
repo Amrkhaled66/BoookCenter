@@ -2,9 +2,9 @@ import Arrow from "src/assets/Arrow.svg?react";
 
 import { useSiteConfig } from "src/contexts/configCtx.jsx";
 export default function LeftPart() {
-  const { config, isLoading } = useSiteConfig();
+  const { config, isLoading, isError } = useSiteConfig();
 
-  if (isLoading) return null;
+  if (isLoading || isError) return null;
 
   const { whatsappChannel, whatsappNumber } = config;
   return (

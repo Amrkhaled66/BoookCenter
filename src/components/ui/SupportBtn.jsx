@@ -5,7 +5,8 @@ import { useLocation } from "react-router-dom";
 export default function SupportBtn() {
   const { pathname } = useLocation();
 
-  if (pathname !== "/support" || pathname !== "/cart") return;
+  if (pathname === "/support" || pathname === "/cart") return;
+  
   return (
     <motion.div
       initial={{ x: -300, opacity: 0 }}

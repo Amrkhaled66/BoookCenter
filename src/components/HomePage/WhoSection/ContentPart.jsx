@@ -1,7 +1,7 @@
 const ProductBox = ({ children, className }) => {
   return (
     <span
-      className={`text-nowrap rounded-md px-6 py-4 font-mainFont text-base sm:text-xl ${className}`}
+      className={`text-nowrap text-sm rounded-md  px-3 lg:px-6 py-4 font-mainFont  sm:text-xl ${className}`}
     >
       {children}
     </span>
@@ -19,7 +19,7 @@ export default function ContentPart() {
           </span>
         </span>
       </p>
-      <p className="text-lg font-bold leading-[22px] tracking-wide sm:text-xl">
+      <p className=" font-bold leading-[22px] tracking-wide sm:text-xl">
         بوك سنتر هو أول بزنس في مصر بيجمع لك كل اللي محتاجه عشان تذاكر وتنجح
         <br />
         هدفنا نوفر لك كل حاجة تساعدك توصل لأهدافك الدراسية.
