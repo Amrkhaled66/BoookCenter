@@ -167,7 +167,12 @@ body {
   animation: drawLine 3s 1s linear forwards;
   -webkit-animation: drawLine 3s 1s linear forwards;
 }
+
+
 @keyframes drawLine {
+  from{
+    stroke-dashoffset: 800;
+  }
   to {
     stroke-dashoffset: 0;
   }
