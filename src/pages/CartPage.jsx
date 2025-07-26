@@ -2,7 +2,7 @@ import useCart from "src/hooks/useCart";
 
 import { CartList, CartSummary, EmptyCart } from "src/components/CartPage";
 
-import CartImg from "src/assets/cart.svg?react";
+import CartImg from "src/assets/cart.svg";
 import PageHeader from "src/components/ui/PageHeader";
 
 export default function CartPage() {
@@ -20,7 +20,7 @@ export default function CartPage() {
             >
               {cartLength}
             </div>
-            <CartImg className="h-full w-full" />
+            <img src={CartImg}  loading="lazy"  className="h-full w-full" />
           </div>
         </PageHeader>
 

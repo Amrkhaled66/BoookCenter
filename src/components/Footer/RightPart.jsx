@@ -1,8 +1,8 @@
 import { useSiteConfig } from "src/contexts/configCtx.jsx";
 
 import logo2 from "src/assets/logo2.svg";
-import Whatsapp from "src/assets/whatsapp.svg?react";
-import Facebook from "src/assets/facebook.svg?react";
+import Whatsapp from "src/assets/whatsapp.svg";
+import Facebook from "src/assets/facebook.svg";
 import Instagram from "src/assets/instagram.svg";
 import Tiktok from "src/assets/tiktok.png";
 
@@ -27,10 +27,10 @@ export default function RightPart() {
       <img src={logo2} alt="BookCenter" />
       <div className="flex items-center gap-x-6 border-b-2 border-t-2 border-b-white border-t-white px-4 py-10">
         {config?.whatsappNumber && (
-          <SocialIcons href={config.whatsapp} icon={<Whatsapp  className="size-[50px]" />} />
+          <SocialIcons href={config.whatsapp} icon={<img src={Whatsapp} loading="lazy"  className="size-[50px]" />} />
         )}
         {config?.facebook && (
-          <SocialIcons href={config.facebook} icon={<Facebook  className="size-[50px]" />} />
+          <SocialIcons href={config.facebook} icon={<img src={Facebook}  loading="lazy"   className="size-[50px]" />} />
         )}
         {config?.instagram && (
           <SocialIcons

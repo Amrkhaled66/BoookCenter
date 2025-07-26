@@ -5,7 +5,7 @@ import ScaleButton from "components/ui/ScaleButton";
 //  Icons
 import { Icon } from "@iconify/react";
 
-import Book from "src/assets/Frame.svg?react";
+import Book from "src/assets/Frame.svg";
 
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ export default function NavLinks() {
               textColor="black"
               className="group flex items-center gap-x-1 bg-white text-darkAndWhite-color drop-shadow-lg"
             >
-              <Book /> سجل
+              <img src={Book} loading="lazy"  /> سجل
               <span className="text-main-color">الدخول</span>
             </ShadowButton>
           </li>

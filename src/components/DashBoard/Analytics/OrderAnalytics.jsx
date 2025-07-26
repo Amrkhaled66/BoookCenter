@@ -22,7 +22,6 @@ import {
   FaArrowUp,
   FaArrowDown,
   FaEye,
-  FaFilter
 } from "react-icons/fa";
 
 import Loader from "src/components/ui/icons/Loader";

@@ -6,7 +6,6 @@ import ProductsContextProvider from "src/contexts/products";
 import CategoryContextProvider from "src/contexts/category";
 import AdminContextProvider from "src/contexts/AdminContext";
 
-
 import DashBoardLayout from "src/layout/DashBoardLayout";
 import MainLayout from "src/layout/MainLayout";
 
@@ -36,41 +35,44 @@ import {
   ProductsQuantity,
   ProductsTable,
   SiteConfig,
-  Analytics
+  Analytics,
 } from "src/pages";
 
-import {
-  ProtectedRoute,
-  OnlyGuestUser,
-  OnlyAdmin,
-} from "src/middleware";
-
+import { ProtectedRoute, OnlyGuestUser, OnlyAdmin } from "src/middleware";
 
 import { ADMIN_PATH } from "src/services/defaultSettings";
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={
-        <AxiosPrivateProvider>
-          <MainLayout />
-        </AxiosPrivateProvider>
-      }>
-        <Route index element={
-          <CategoryContextProvider>
-            <ProductsContextProvider>
-              <HomePage />
-            </ProductsContextProvider>
-          </CategoryContextProvider>
-        } />
+      <Route
+        path="/"
+        element={
+          <AxiosPrivateProvider>
+            <MainLayout />
+          </AxiosPrivateProvider>
+        }
+      >
+        <Route
+          index
+          element={
+            <CategoryContextProvider>
+              <ProductsContextProvider>
+                <HomePage />
+              </ProductsContextProvider>
+            </CategoryContextProvider>
+          }
+        />
         <Route path="product/:id" element={<ProductPage />} />
-        <Route path="products" element={
-          <CategoryContextProvider>
-            <ProductsContextProvider>
-              <Products />
-            </ProductsContextProvider>
-          </CategoryContextProvider>
-
-        } />
+        <Route
+          path="products"
+          element={
+            <CategoryContextProvider>
+              <ProductsContextProvider>
+                <Products />
+              </ProductsContextProvider>
+            </CategoryContextProvider>
+          }
+        />
         <Route path="support" element={<Support />} />
 
         <Route
@@ -118,13 +120,16 @@ export default function AppRouter() {
           </OnlyGuestUser>
         }
       />
-      <Route path={ADMIN_PATH}>
+      <Route lazy={true} path={ADMIN_PATH}>
         <Route index element={<Navigate to="login" replace />}></Route>
-        <Route path="login" element={
-          <AdminContextProvider>
-            <AdminLogInPage />
-          </AdminContextProvider>
-        }></Route>
+        <Route
+          path="login"
+          element={
+            <AdminContextProvider>
+              <AdminLogInPage />
+            </AdminContextProvider>
+          }
+        ></Route>
         <Route
           path="panel"
           element={

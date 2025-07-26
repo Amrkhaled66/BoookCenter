@@ -1,6 +1,6 @@
 import ImagePart from "./ImagePart";
 import ContentPart from "./ContentPart";
-import CurvedLine2 from "src/assets/CurvedLine2.svg?react";
+import CurvedLine2 from "src/assets/CurvedLine2.svg";
 
 export default function index() {
   return (
@@ -9,7 +9,7 @@ export default function index() {
         <ImagePart />
         <ContentPart />
       </div>
-      <CurvedLine2 className="absolute bottom-0 left-0 animate-pulse" />
+      <img src={CurvedLine2}  loading="lazy"  className="absolute bottom-0 left-0 animate-pulse" />
     </div>
   );
 }

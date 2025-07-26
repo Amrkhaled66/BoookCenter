@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Icon } from "@iconify/react";
 
-import Book from "src/assets/Frame.svg?react";
+import Book from "src/assets/Frame.svg";
 
 // hooks
 import useShowMobileMenu from "src/hooks/useShowMobileMenu";
@@ -33,7 +33,7 @@ export default function MobileMenu() {
           <ul className="flex w-full flex-col  gap-y-4">
             <Link to="/login" className="flex   w-full gap-x-2">
               <MobileMenuButton>
-                <Book /> سجل الدخول
+                <img src={Book} loading="lazy"  /> سجل الدخول
               </MobileMenuButton>
             </Link>
 

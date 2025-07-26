@@ -1,5 +1,5 @@
-import Stikes from "src/assets/Stikes.svg?react";
-import Stand from "src/assets/Stand.svg?react";
+import Stikes from "src/assets/Stikes.svg";
+import Stand from "src/assets/Stand.svg";
 import currencyFormatter from "src/utils/currencyFormatter";
 
 const Description = ({
@@ -38,8 +38,8 @@ const Description = ({
           </div>
         </div>
         {items.length > 0 && (
-          <div className="mr-auto flex w-[80%] translate-x-9 flex-col items-end">
-            <Stikes className="w-full -translate-y-3 sm:w-[60%]" />
+          <div className="mr-auto flex w-[80%] -z-10 translate-x-9 flex-col items-end">
+            <img src={Stikes}  loading="lazy"  className="w-full -translate-y-5 sm:w-[50%]" />
             <div className="w-full -translate-y-5 space-y-2 rounded-3xl border-8 border-wood-color bg-[#FFFCE5] px-5 py-3 font-semibold tracking-wider sm:w-[70%] sm:py-6">
               {items?.map(
                 (item) => item.length > 0 && <p key={item}>📚 {item}</p>,

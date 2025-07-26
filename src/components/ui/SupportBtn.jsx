@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SupportIcon from "src/assets/supportIcon.svg?react";
+import SupportIcon from "src/assets/supportIcon.svg";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 export default function SupportBtn() {
@@ -23,7 +23,7 @@ export default function SupportBtn() {
         </div>
         <div className="relative h-10 w-10">
           <span className="absolute left-0 right-0 inline-flex h-full w-full rounded-full opacity-75"></span>
-          <SupportIcon className="h-11 w-11" />
+          <img src={SupportIcon}  loading="lazy"  className="h-11 w-11" />
         </div>
       </Link>
     </motion.div>
