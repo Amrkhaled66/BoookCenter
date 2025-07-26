@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-import CurlyLine from "src/assets/CurlyLine.svg?react";
-import Quotes from "src/assets/Quotes.svg?react";
+import CurlyLine from "src/assets/CurlyLine.svg";
+import Quotes from "src/assets/Quotes.svg";
 import TransparentBtn from "src/components/ui/TransparentBtn";
 
 import { Icon } from "@iconify/react";
@@ -13,8 +13,12 @@ import useAuth from "src/hooks/useAuth";
 const ContentSectionTitle = function () {
   return (
     <h2 className="font-elMessiri relative flex items-center text-3xl font-bold text-main-color sm:text-4xl lg:text-5xl xl:text-5xl">
-      <CurlyLine className="absolute animated-line-hero -bottom-6 w-32 sm:w-36 lg:w-auto" />
-      <Quotes className="absolute -top-12" />
+      <img
+        src={CurlyLine}
+        loading="lazy"
+        className="animated-line-hero absolute -bottom-6 w-32 sm:w-36 lg:w-auto"
+      />
+      <img src={Quotes} loading="lazy" className="absolute -top-12" />
       <span className="z-10 text-nowrap">كل الكتب ...</span>
       <span className="text-nowrap">من مصدر واحد</span>
     </h2>
@@ -35,10 +39,9 @@ export default function ContentSection() {
       <ContentSectionTitle />
 
       {/* description */}
-      <p className="flex flex-col space-y-1 text-center text-base font-[550]  tracking-wide text-second-text--color md:text-right sm:text-lg leading-[30px] lg:text-2xl">
-        بتدور علي كتب دراسية أو رواية تخطف أنفاسك  <br />عندنا كل اللي محتاجه في مكان
-        واحد
-
+      <p className="flex flex-col space-y-1 text-center text-base font-[550] leading-[30px] tracking-wide text-second-text--color sm:text-lg md:text-right lg:text-2xl">
+        بتدور علي كتب دراسية أو رواية تخطف أنفاسك <br />
+        عندنا كل اللي محتاجه في مكان واحد
       </p>
 
       {/* CTA button */}

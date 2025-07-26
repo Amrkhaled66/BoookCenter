@@ -1,9 +1,8 @@
-import ConfusingPanda from "src/assets/ConfusingPanda.svg?react";
-
+import ConfusingPanda from "src/assets/ConfusingPanda.svg";
 export default function ImagePart() {
   return (
-    <div className="flex w-full  lg:w-1/2 justify-center lg:justify-start">
-      <ConfusingPanda alt="BOOK CENTER" />
+    <div className="flex w-full justify-center lg:w-1/2 lg:justify-start">
+      <img loading="lazy" src={ConfusingPanda} alt="Book Center" />
     </div>
   );
 }

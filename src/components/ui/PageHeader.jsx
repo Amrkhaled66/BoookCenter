@@ -1,4 +1,4 @@
-import CartLine from "src/assets/cartLine.svg?react";
+import CartLine from "src/assets/cartLine.svg";
 
 export default function PageHeader({ title, children }) {
   return (
@@ -6,7 +6,7 @@ export default function PageHeader({ title, children }) {
       <p className="text-center font-mainFont text-4xl font-bold text-footer-color sm:text-5xl">
         {title}
       </p>
-      <CartLine className="absolute -bottom-7 left-1/2 block w-[100%] -translate-x-1/2" />
+      <img src={CartLine} className="absolute -bottom-7 left-1/2 block w-[100%] -translate-x-1/2" />
       {children}
     </div>
   );

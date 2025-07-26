@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Icon } from "@iconify/react";
 
-import Book from "src/assets/Frame.svg?react";
+import Book from "src/assets/Frame.svg";
 
 // hooks
 import useShowMobileMenu from "src/hooks/useShowMobileMenu";
@@ -30,10 +30,10 @@ export default function MobileMenu() {
           variants={containerVariants}
           className="fixed left-0 right-0 top-24 z-[1000] mx-auto w-[90%] rounded-xl bg-main-color py-5 font-cairo text-base font-semibold tracking-wider text-black"
         >
-          <ul className="flex w-full flex-col  gap-y-4">
-            <Link to="/login" className="flex   w-full gap-x-2">
+          <ul className="flex w-full flex-col gap-y-4">
+            <Link to="/login" className="flex w-full gap-x-2">
               <MobileMenuButton>
-                <Book /> سجل الدخول
+                <img src={Book} /> سجل الدخول
               </MobileMenuButton>
             </Link>
 

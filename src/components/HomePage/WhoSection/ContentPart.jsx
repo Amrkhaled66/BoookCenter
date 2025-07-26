@@ -1,7 +1,7 @@
 const ProductBox = ({ children, className }) => {
   return (
     <span
-      className={`text-nowrap text-sm rounded-md  px-3 lg:px-6 py-4 font-mainFont  sm:text-xl ${className}`}
+      className={`text-nowrap text-sm rounded-md  px-3 lg:p-4 xl:px-6 py-4 font-mainFont  sm:text-xl ${className}`}
     >
       {children}
     </span>

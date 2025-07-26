@@ -22,7 +22,6 @@ import {
   FaArrowUp,
   FaArrowDown,
   FaEye,
-  FaFilter
 } from "react-icons/fa";
 
 import Loader from "src/components/ui/icons/Loader";
@@ -43,7 +42,7 @@ ChartJS.register(
 
 export default function OrderAnalytics() {
   const { data, isLoading } = useGetOrderAnalytics();
-  const [selectedTimeRange, setSelectedTimeRange] = useState('7d');
+  // const [selectedTimeRange, setSelectedTimeRange] = useState('7d');
   const [activeTab, setActiveTab] = useState('overview');
 
   if (isLoading) {

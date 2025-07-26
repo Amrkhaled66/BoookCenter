@@ -1,4 +1,4 @@
-import Arrow from "src/assets/Arrow.svg?react";
+import Arrow from "src/assets/Arrow.svg";
 
 import { useSiteConfig } from "src/contexts/configCtx.jsx";
 export default function LeftPart() {
@@ -14,7 +14,7 @@ export default function LeftPart() {
           <span className="text-white">لسا عندك اي سؤال عن...</span>
           <span className="text-stroke-light relative text-nowrap text-left font-cairo text-second-color xl:-translate-x-11">
             بوك سنتر
-            <Arrow className="absolute left-0 top-10 z-10 hidden sm:left-14 lg:block" />
+            < img src={Arrow} loading="lazy" className="absolute left-0 top-10 z-10 hidden sm:left-14 lg:block" />
           </span>
         </p>
       </div>

@@ -63,7 +63,7 @@ export default function AppRouter() {
           </CategoryContextProvider>
         } />
         <Route path="product/:id" element={<ProductPage />} />
-        <Route path="products" element={
+        <Route lazy={true}  path="products" element={
           <CategoryContextProvider>
             <ProductsContextProvider>
               <Products />
@@ -118,7 +118,7 @@ export default function AppRouter() {
           </OnlyGuestUser>
         }
       />
-      <Route path={ADMIN_PATH}>
+      <Route lazy={true} path={ADMIN_PATH}>
         <Route index element={<Navigate to="login" replace />}></Route>
         <Route path="login" element={
           <AdminContextProvider>

@@ -11,6 +11,7 @@ import currencyFormatter from "src/utils/currencyFormatter";
 // icons
 import { MdDeleteOutline } from "react-icons/md";
 
+import QuantitySelector from "src/components/ui/QuantitySelector";
 const itemVariants = {
   initial: { opacity: 0, x: 100 },
   animate: { opacity: 1, x: 0 },
@@ -92,67 +93,3 @@ export default function CartItem({ productInfo, quantity }) {
 import { FaPlus } from "react-icons/fa6";
 import { FiMinus } from "react-icons/fi";
 import Loader from "../ui/icons/Loader";
-function QuantitySelector({ id, quantity, onModify }) {
-  const [currQuantity, setCurrQuantity] = useState(quantity);
-  const [inputValue, setInputValue] = useState(quantity.toString());
-  const { mutate, isPending } = useAddToCartValidation();
-
-
-  const handleAdd = () => {
-    const newQuantity = currQuantity + 1;
-    mutate(
-      { id, quantity: newQuantity },
-      {
-        onSuccess: () => {
-          onModify(id, newQuantity);
-          setCurrQuantity(newQuantity);
-          setInputValue(newQuantity.toString());
-        },
-        onError: () => {
-          setInputValue(quantity.toString());
-          setCurrQuantity(quantity);
-        },
-      },
-    );
-  }
-
-  const handleDecrease = () => {
-    if (currQuantity === 1) return;
-    const newQuantity = currQuantity - 1;
-
-    mutate(
-      { id, quantity: newQuantity },
-      {
-        onSuccess: () => {
-          onModify(id, newQuantity);
-          setCurrQuantity(newQuantity);
-          setInputValue(newQuantity.toString());
-        },
-        onError: () => {
-          setInputValue(quantity.toString());
-          setCurrQuantity(quantity);
-        },
-      },
-    )
-  };
-
-  return (
-    <div className="flex rounded-xl border-2 border-main-color w-fit items-center justify-start sm:justify-center">
-      <button onClick={handleAdd} disabled={isPending} className=" disabled:cursor-not-allowed  px-2 lg:px-3 ">
-
-        {isPending ? <Loader width={15} heigh={15} /> : <FaPlus />}
-      </button>
-      <input
-        type="number"
-        value={inputValue}
-        disabled
-        min={1}
-        className="   bg-main-color text-white  no-arrows    p-2 max-w-10 text-center font-cairo text-xs font-bold transition-all duration-300 focus:border-main-text--color focus:outline-none  sm:text-base"
-      />
-      <button disabled={currQuantity == 1 || isPending} onClick={handleDecrease} className=" disabled:cursor-not-allowed px-2 lg:px-3 ">
-
-        {isPending ? <Loader width={15} heigh={15} /> : <FiMinus />}</button>
-
-    </div>
-  );
-}

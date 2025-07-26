@@ -30,11 +30,10 @@ export default {
         "main-text--color": "var(--main__text-color)",
         "second-text--color": "var(--second__text-color)",
         "card-color": "var(--card-color)",
-        "black-color": "#000000",
-        "white-color": "#ffffff",
         "gray-color": "var(--gray-color)",
         "wood-color": "var(--wood-color)",
         "footer-color": "var(--footer-color)",
+        "stroke-color": "var(--stroke-color)",
       },
 
       fontFamily: {

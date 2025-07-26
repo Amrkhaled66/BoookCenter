@@ -51,7 +51,7 @@ body {
 
 :root {
   --main-color: #094067;
-  --main-color-100: #b8e3ff;
+  --main-color-100: #dff0ff;
   --second-color: #ef4565;
   --third-color: #20c997;
   --fourth-color: #f9d3b7;
@@ -62,6 +62,7 @@ body {
   --gray-color: #bdbdbd;
   --wood-color: #a77e54;
   --footer-color: #0e2e45;
+  --stroke-color: #e0e0e0;
 }
 
 .dark {
@@ -71,6 +72,10 @@ body {
   --darkAndWhite-color: #ffffff;
   --main__text-color: #a6d9ff;
   --second__text-color: #93999f;
+}
+
+img {
+  pointer-events: none;
 }
 
 /* Fonts */
@@ -131,8 +136,6 @@ body {
   overflow: visible !important;
 }
 
-
-
 .line-container {
   position: relative;
   width: 100%;
@@ -144,7 +147,8 @@ body {
   position: absolute;
   top: 0;
   right: -100%;
-  /*Startoff-screen*/width: 100%;
+  /*Startoff-screen*/
+  width: 100%;
   height: 100%;
   background-color: var(--second-color);
   animation: moveLine 2s linear infinite;
@@ -160,7 +164,6 @@ body {
   }
 }
 
-
 .animated-line-hero path {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
@@ -168,16 +171,11 @@ body {
   -webkit-animation: drawLine 3s 1s linear forwards;
 }
 
-
 @keyframes drawLine {
-  from{
+  from {
     stroke-dashoffset: 800;
   }
   to {
     stroke-dashoffset: 0;
   }
 }
-
-
-
-

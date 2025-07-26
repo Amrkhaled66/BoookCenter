@@ -1,7 +1,7 @@
 import LeftPart from "./LeftPart";
 import RightPart from "./RightPart";
 
-import WoodenSign from "src/assets/WoodenSign.svg?react";
+import WoodenSign from "src/assets/WoodenSign.svg";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -12,7 +12,7 @@ export default function Footer() {
           <RightPart />
           <LeftPart />
         </div>
-        <WoodenSign className="absolute -bottom-5 right-0 hidden h-[200px] w-[200px] sm:block" />
+        <img src={WoodenSign}   alt="BookCenter" loading="lazy" className="absolute  -bottom-5 right-0 hidden h-[200px] w-[200px] sm:block" />
         <p className="text-center font-cairo text-xl font-semibold text-white">
           &lt; All Copy Rights Reserved @{currentYear} &gt;
         </p>

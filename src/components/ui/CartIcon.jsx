@@ -18,7 +18,7 @@ const CartIcon = ({ className=" " }) => {
       >
         {cartLength}
       </div>
-      <img className="h-full w-full" src={cartImg} alt="cart" />
+      <img className="h-full w-full" loading="lazy" src={cartImg} alt="cart" />
     </Link>
   );
 };

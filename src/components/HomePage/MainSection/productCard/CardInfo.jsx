@@ -1,6 +1,6 @@
 import currencyFormatter from "src/utils/currencyFormatter";
 
-import Stikes from "src/assets/Stikes.svg?react";
+import Stikes from "src/assets/Stikes.svg";
 
 function CardInfo({ originalPrice, discountPrice, title, seller }) {
   return (
@@ -14,7 +14,7 @@ function CardInfo({ originalPrice, discountPrice, title, seller }) {
         </p>
         <div className="flex">
           <div className="relative mx-auto w-fit rounded-lg border-[1px] border-black bg-fourth-color px-2 py-2 text-base font-bold text-black">
-            <Stikes className="absolute -bottom-[30px] left-[5px] -z-10 w-[90%]" />
+            <img src={Stikes} loading="lazy" className="absolute -bottom-[30px] left-[5px] -z-10 w-[90%]" />
 
             <p className="text-center">{currencyFormatter(discountPrice)}</p>
             <p

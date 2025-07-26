@@ -2,7 +2,7 @@ import useCart from "src/hooks/useCart";
 
 import { CartList, CartSummary, EmptyCart } from "src/components/CartPage";
 
-import CartImg from "src/assets/cart.svg?react";
+import CartImg from "src/assets/cart.svg";
 import PageHeader from "src/components/ui/PageHeader";
 
 export default function CartPage() {
@@ -20,14 +20,14 @@ export default function CartPage() {
             >
               {cartLength}
             </div>
-            <CartImg className="h-full w-full" />
+            <img src={CartImg} loading="lazy" className="h-full w-full" />
           </div>
         </PageHeader>
 
         {cartLength < 1 ? (
           <EmptyCart />
         ) : (
-          <div className="mt-8 flex w-full flex-col items-center  gap-y-6 pb-12 xl:w-[80%]">
+          <div className="mt-8 flex w-full flex-col items-center gap-y-6 pb-12 xl:w-[80%]">
             <CartList />
             <CartSummary />
           </div>

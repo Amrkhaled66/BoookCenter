@@ -13,6 +13,9 @@ import { getUser } from "src/services/authServices";
 import Alert from "src/components/ui/Alert";
 import { useValidateCart } from "src/hooks/useCart";
 
+import ItemsTable from "src/components/CheckOut/ItemsTable/ItemsTable";
+import DeliveryInfoOverView from "src/components/CheckOut/DeliveryInfo/DeliveryInfoOverView";
+
 const CheckOut = () => {
   useValidateCart();
 
@@ -61,17 +64,19 @@ const CheckOut = () => {
         <PageHeader title={"مراجعة الفاتورة"} />
       </div>
       <div className="w-screen">
-        <div className="flex w-full flex-col justify-between gap-x-16 gap-y-16 sm:px-8">
-          <DeliveryInfo
+        <div className="flex w-full flex-row justify-between gap-x-16 gap-y-16 sm:px-8">
+          {/* <DeliveryInfo
             errors={errors}
             formData={formData}
             setFormData={setFormData}
-          />
-          <OrderSummary
+          /> */}
+          <ItemsTable />
+          <DeliveryInfoOverView />
+          {/* <OrderSummary
             Loading={mutate.isPending}
             city={formData.city}
             onSubmit={handleSubmit}
-          />
+          /> */}
         </div>
       </div>
     </div>

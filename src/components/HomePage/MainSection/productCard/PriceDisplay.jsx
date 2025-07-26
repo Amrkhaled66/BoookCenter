@@ -10,7 +10,7 @@ export default function PriceDisplay({ originalPrice, discountedPrice }) {
   return (
     <div className="my-3 w-full pt-2 text-center font-mainFont text-xs md:text-base">
       {discountedPrice ? (
-        <div className="flex flex-col-reverse items-center justify-end gap-x-5 sm:flex-row">
+        <div className="flex flex-col-reverse items-center justify-end gap-x-5 ">
           <span className="text-second-color line-through">
             {formattedOriginalPrice}
           </span>

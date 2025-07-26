@@ -12,9 +12,10 @@ const TableHeader = ({ title }) => {
   );
 };
 
-const TableData = ({ data, className = "" }) => {
+const TableData = ({ data, className = "", colSpan }) => {
   return (
     <td
+      colSpan={colSpan}
       className={`border-[1px] border-[#6b7280] p-3 text-sm sm:p-5 sm:text-base ${className}`}
     >
       {data}
@@ -79,11 +80,12 @@ export default function InvoiceTable({ city }) {
         ))}
       </tbody>
       <tfoot>
-        <tr className="text-center font-semibold text-black">
+        <tr  className="text-center font-semibold text-black">
           <TableData data="الشحن" />
           <TableData data="---" />
           <TableData data="---" />
           <TableData
+            colSpan={2}
             data={
               shippingPrice === 0
                 ? "اختار محافظتك"
@@ -96,7 +98,10 @@ export default function InvoiceTable({ city }) {
           <TableData data="---" />
           <TableData data="---" />
           {/* <TableData data="---" /> */}
-          <TableData data={currencyFormatter(total + totalShipping)} />
+          <TableData
+            colSpan={3}
+            data={currencyFormatter(total + totalShipping)}
+          />
         </tr>
       </tfoot>
     </table>
