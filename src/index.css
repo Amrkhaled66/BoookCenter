@@ -49,6 +49,11 @@ body {
   overflow: visible !important;
 }
 
+img{
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
 :root {
   --main-color: #094067;
   --main-color-100: #b8e3ff;

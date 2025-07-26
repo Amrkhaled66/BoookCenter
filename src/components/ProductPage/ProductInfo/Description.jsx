@@ -34,13 +34,13 @@ const Description = ({
             </p>
           </div>
           <div className="flex justify-center">
-            <Stand />
+            <img loading="lazy"src={Stand} />
           </div>
         </div>
         {items.length > 0 && (
-          <div className="mr-auto flex w-[80%] -z-10 translate-x-9 flex-col items-end">
-            <img src={Stikes}  loading="lazy"  className="w-full -translate-y-5 sm:w-[50%]" />
-            <div className="w-full -translate-y-5 space-y-2 rounded-3xl border-8 border-wood-color bg-[#FFFCE5] px-5 py-3 font-semibold tracking-wider sm:w-[70%] sm:py-6">
+          <div className="mr-auto flex w-[50%]  -z-10 translate-x-9 flex-col items-end">
+            <img src={Stikes}  loading="lazy"  className="w-full translate-x-8 -translate-y-5 sm:w-[80%]" />
+            <div className="w-full -translate-y-7 space-y-2 rounded-3xl border-8 border-wood-color bg-[#FFFCE5] px-5 py-3 font-semibold tracking-wider sm:w-full sm:py-6">
               {items?.map(
                 (item) => item.length > 0 && <p key={item}>📚 {item}</p>,
               )}
