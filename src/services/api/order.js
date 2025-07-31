@@ -5,10 +5,7 @@ const addOrder = async ({ data }) => {
   return response;
 };
 
-const getShippingPrice = async (city) => {
-  const { data } = await axiosInstance.get(`/shipping?city=${city}`);
-  return data;
-};
+
 
 const createInvoice = async ({ invoiceData }) => {
   const { data } = await axiosPrivate.post(
@@ -18,4 +15,4 @@ const createInvoice = async ({ invoiceData }) => {
   return data;
 };
 
-export { addOrder, getShippingPrice, createInvoice };
+export { addOrder, createInvoice };

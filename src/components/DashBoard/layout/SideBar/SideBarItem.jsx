@@ -5,7 +5,7 @@ export default function SideBarItem({ children, to, icon, ...props }) {
   const { closeSideBar, collapsed } = useSideBar();
   const { isSmallScreen } = useWidth();
   const NavClassName =
-    "flex items-center gap-x-2 rounded-lg  py-3 text-main-color   normal-case transition-colors duration-300  mb-1 hover:bg-gray-200   bg-gray-100 font-cairo font-semibold   pr-2 ";
+    "flex items-center gap-x-2 rounded-lg  py-3 text-main-color   normal-case transition-colors duration-300  mb-1 hover:bg-gray-200   bg-gray-100 font-cairo font-semibold    pr-2 ";
 
   return (
     <NavLink

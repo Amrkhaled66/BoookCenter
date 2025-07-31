@@ -28,7 +28,8 @@ export default defineConfig({
     // }),
   ],
   server: {
-    port: 3001,
+    host: '0.0.0.0', // or '127.0.0.1' for IPv4 only
+    port: 5173
   },
   resolve: {
     alias: {

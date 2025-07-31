@@ -7,7 +7,7 @@ export default function SideBarHeader() {
   const { closeSideBar } = useSideBar();
   const { isSmallScreen } = useWidth();
   return (
-    <div className="mb-8 flex justify-between pt-3 text-xl font-extrabold text-gray-600">
+    <div className="mb-8 flex justify-end pt-3 text-xl font-extrabold text-gray-600">
       {isSmallScreen && (
         <button
           onClick={closeSideBar}
