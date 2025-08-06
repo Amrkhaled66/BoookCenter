@@ -25,3 +25,4 @@ export { default as ProductsQuantity } from "./DashBoard/ProductsQuantity";
 export { default as ProductsTable } from "./DashBoard/Products";
 export { default as SiteConfig } from "./DashBoard/SiteConfig";
 export { default as Analytics } from "./DashBoard/Analytics";
+export { default as OrdersTable } from "./DashBoard/Orders";

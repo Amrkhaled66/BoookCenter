@@ -10,7 +10,7 @@ import { RiStockLine } from "react-icons/ri";
 import { BsBoxes } from "react-icons/bs";
 import { GrConfigure } from "react-icons/gr";
 import { IoAnalyticsSharp } from "react-icons/io5";
-
+import { MdOutlineTableChart } from "react-icons/md";
 export const links = [
   {
     name: "الاحصائيات",
@@ -22,7 +22,16 @@ export const links = [
     icon: <CiLogin />,
     to: "loginAsUser",
   },
-
+  {
+    name: "جدول المنتجات",
+    icon: <BsBoxes />,
+    to: "productsTable",
+  },
+  {
+    name: "الطلبات",
+    icon: <MdOutlineTableChart />,
+    to: "orders",
+  },
   {
     name: "اٍنشاء اوردر يدوي",
     icon: <VscDiffAdded />,
@@ -53,16 +62,13 @@ export const links = [
     icon: <GiTeacher />,
     to: "seller",
   },
+
   {
     name: "تعديل عدد المنتج",
     icon: <RiStockLine />,
     to: "productsQuantity",
   },
-  {
-    name: "جدول المنتجات",
-    icon: <BsBoxes />,
-    to: "productsTable",
-  },
+
   {
     name: "الكونفج",
     icon: <GrConfigure />,

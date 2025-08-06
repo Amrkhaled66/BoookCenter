@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-
+import { axiosAdmin } from "src/api/axios";
 import {
   getUserProfile as getUserProfileRequest,
   getUserId as getUserIdRequest,
@@ -212,6 +212,21 @@ const useAddManualOrder = () => {
   });
 };
 
+import cleanQuery from "src/utils/cleanQuery";
+const useGetOrdersWithFilter = (filters) => {
+  const cleaned = cleanQuery(filters);
+
+  return useQuery({
+    queryKey: ["admin-orders", cleaned],
+    queryFn: async () => {
+      const params = new URLSearchParams(cleaned).toString();
+      console.log("Sending request to: ", params);
+      const { data } = await axiosAdmin.get(`/order?${params}`);
+      return data.data;
+    },
+  });
+};
+
 export {
   useGetUserProfile,
   useGetUserId,
@@ -241,4 +256,5 @@ export {
   useGetProductByName4Admin,
   useAddManualOrder,
   useGetProducts4Admin,
+  useGetOrdersWithFilter,
 };

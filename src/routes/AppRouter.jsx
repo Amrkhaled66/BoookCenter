@@ -36,6 +36,7 @@ import {
   ProductsTable,
   SiteConfig,
   Analytics,
+  OrdersTable,
 } from "src/pages";
 
 import { ProtectedRoute, OnlyGuestUser, OnlyAdmin } from "src/middleware";
@@ -152,6 +153,7 @@ export default function AppRouter() {
           <Route path="addManualOrder" element={<AddManualOrder />} />
           <Route path="category" element={<Category />} />
           <Route path="seller" element={<Seller />} />
+          <Route path="orders" element={<OrdersTable />} />
           <Route path="productsTable" element={<ProductsTable />} />
           <Route path="config" element={<SiteConfig />} />
         </Route>
